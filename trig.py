@@ -31,6 +31,8 @@ import math
 # We can use this series to approximate sin(x).
 
 def sin(x):
+    if abs(x) > math.pi/2:
+        raise ValueError("x must be in the interval [-Pi/2, Pi/2]")
     lb = 0
     ub = 0
     # n should be a multiple of 4
@@ -68,6 +70,8 @@ def sin(x):
 # P(x) = f(0) + f'(0)*x + f''(0)*x^2/2! + f'''(0)*x^3/3! + ...
 # P(x) = 1 - x^2/2! + x^4/4! - x^6/6! + x^8/8! - x^10/10! + ...
 def cos(x):
+    if abs(x) > math.pi/2:
+        raise ValueError("x must be in the interval [-Pi/2, Pi/2]")
     lb = 0
     ub = 0
     n = 12
@@ -89,3 +93,16 @@ print("sin(1rad) is between %.15f and %.15f" %(bounds[0], bounds[1]))
 
 bounds = cos(1)
 print("cos(1rad) is between %.15f and %.15f" %(bounds[0], bounds[1]))
+
+# We only accept arguments in the interval [-Pi/2, Pi/2]
+# Let's test our input validation
+
+try:
+    bounds = sin(2)
+except:
+    print("2 is out of bounds")
+
+try:
+    bounds = cos(2)
+except:
+    print("2 is out of bounds")
