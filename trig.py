@@ -103,9 +103,9 @@ except:
     print("2 is out of bounds")
 
 try:
-    bounds = cos(2)
+    bounds = cos(-3)
 except:
-    print("2 is out of bounds")
+    print("-3 is out of bounds")
 
 bounds = sin(1.5)
 print("sin(1.5rad) is between %.15f and %.15f" %(bounds[0], bounds[1]))
