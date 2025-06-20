@@ -1,0 +1,33 @@
+Let $a_n$ and $b_n$ be the perimeters of the regular n-gons that circumscribe and inscribe a circle of radius $r$.
+
+We can express the side lengths of the inner and outer polygons, respectively, with the formulas $s_n=2r\sin(\frac{\pi}{n})$ and $S_n = 2r\tan(\frac{\pi}{n})$.
+
+Thus $a_n = 2nr\tan(\frac{\pi}{n})$ and $b_n = 2nr\sin(\frac{\pi}{n})$.
+
+We will now show that $\frac{2a_nb_n}{a_n + b_n} = a_{2n}$.
+
+\begin{align*}
+\frac{2a_nb_n}{a_n + b_n} &= \frac{2*2nr\tan(\frac{\pi}{n})*2nr\sin(\frac{\pi}{n})}{2nr\tan(\frac{\pi}{n}) + 2nr\sin(\frac{\pi}{n})} \\
+&= 4nr \frac{\tan(\frac{\pi}{n})\sin(\frac{\pi}{n})}{\tan(\frac{\pi}{n}) + \sin(\frac{\pi}{n})} \\
+&= 4nr \tan(\frac{\pi}{2n}) \\
+&= a_{2n}
+\end{align*}
+
+On the third step, we used the identity $\tan(\frac{x}{2}) = \frac{\tan(x)\sin(x)}{\tan(x) + \sin(x)}$.
+
+Now let's show that $\sqrt{a_{2n}b_n} = b_{2n}$.
+
+\begin{align*}
+\sqrt{a_{2n}b_n} &= \sqrt{2(2n)r\tan(\frac{\pi}{2n}) 2nr\sin(\frac{\pi}{n})} \\
+&= \sqrt{2(2n)r\tan(\frac{\pi}{2n}) 2nr * 2\sin(\frac{\pi}{2n})\cos(\frac{\pi}{2n})} \\
+&= 4nr \sqrt{\tan(\frac{\pi}{2n}) \sin(\frac{\pi}{2n})\cos(\frac{\pi}{2n})} \\
+&= 4nr \sqrt{\sin^2(\frac{\pi}{2n})} \\
+&= 4nr \sin(\frac{\pi}{2n}) \\
+&= b_{2n}
+\end{align*}
+
+On the third step, we used the identity $\sin(x) = 2\sin(\frac{1}{2}x)\cos(\frac{1}{2}x)$.
+
+We have now proven that $a_{2n} = \frac{2a_nb_n}{a_n+b_n}$ and $b_{2n} = \sqrt{a_{2n}b_n}$.
+
+These formulas allow us to calculate the perimeter of a regular n-gon, given its apothem r or its circumradius R, where $n = 6*2^k$ for some natural number k. The apothem of a regular polygon is also called its inradius. The circumradius of a regular polygon is also called its outradius.
