@@ -52,10 +52,9 @@ def transform(filename, A):
     X = []
     for row in range(n):
         for col in range(m):
-            vertex = get_xy(row, col, n, m)
-            X.append(np.array(vertex))
-    X = tuple(X)
-    X = np.column_stack(X)  
+            coordinates = get_xy(row, col, n, m)
+            X.append(np.array(coordinates))
+    X = np.column_stack(tuple(X))
 
     # Perform the linear transformation Y = AX
     # Y contains the new coordinates for every pixel
