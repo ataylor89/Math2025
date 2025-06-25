@@ -9,6 +9,9 @@ import math
 # We use numpy for matrix multiplication, and we use matplotlib to read and write images.
 #
 # The algorithm we use to transform images is described below.
+# (In my opinion, an algorithm is just a list of instructions.)
+# 
+# Algorithm
 # 1. We read an image into a matrix using matplotlib.
 # 2. We calculate the dimensions of the matrix that will store the new image.
 # 3. We create a new matrix with the right dimensions to store the new image.
