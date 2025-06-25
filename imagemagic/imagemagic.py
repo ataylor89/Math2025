@@ -2,6 +2,49 @@ import matplotlib.image as mpimg
 import numpy as np
 import math
 
+# This module is dedicated to image transformation. It contains functions for transforming images.
+#
+# The main libraries used are (1) numpy and (2) matplotlib.
+#
+# We use numpy for matrix multiplication, and we use matplotlib to read and write images.
+#
+# The algorithm we use to transform images is described below.
+# 1. We read an image into a matrix using matplotlib.
+# 2. We calculate the dimensions of the matrix that will store the new image.
+# 3. We create a new matrix with the right dimensions to store the new image.
+# 4. We loop through every pixel (row, col) in the original image, and...
+# 4a. We map the matrix coordinates (row, col) to Cartesian coordinates (x, y)
+# 4b. We apply the linear transformation (x2, y2) = A * (x, y),
+#     where A is the transformation matrix, to get the Cartesian coordinates in the new image.
+# 4c. We map the Cartesian coordinates (x2, y2) to matrix coordinates (row2, col2).
+# 4d. We set the color at (row2, col2) in the new image, to the color at (row, col) in the original image.
+# 5. We return the new matrix. The new matrix can be rendered as an image using the matplotlib.pyplot library.
+#
+# I hope that these five steps are clear. I know that the code is a little confusing.
+# Part of the confusion is due to library complexity. I think the libraries can be made a little simpler.
+# Part of the confusion is due to the fact that we have to perform three coordinate transformations...
+#
+# First we convert matrix coordinates to Cartesian coordinates,
+# Then we transform the Cartesian coordinates using the linear transformation y = Ax,
+# Then we convert the resulting Cartesian coordinates to matrix coordinates.
+#
+# The main idea behind image transformation is this:
+# We can use matrix multiplication to rotate or reflect a vector.
+# Likewise, we can use matrix multiplication to rotate or reflect an image.
+# 
+# One reason we have matrices, in the first place, is for vector transformation and image transformation.
+# It is very hard to rotate or reflect an image without resorting to matrix multiplication.
+# But if we use matrix multiplication, it is a straightforward process.
+#
+# I think this is why we learn about matrices in high school.
+# Matrices are very useful when dealing with graphics.
+#
+# I hope that this introduction is helpful.
+# Let's move onto the code.
+#
+# The main functions in this module are rotate, reflectx, and reflecty.
+# The other functions serve as utility functions.
+
 # Gets the x, y coordinates of a pixel in an nxm image
 def get_xy(row, col, n, m):
     i, j = col + 0.5, row + 0.5
