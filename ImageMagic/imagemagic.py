@@ -54,7 +54,7 @@ def transform(filename, A):
         for col in range(m):
             coordinates = get_xy(row, col, n, m)
             X.append(np.array(coordinates))
-    X = np.column_stack(tuple(X))
+    X = np.column_stack(X)
 
     # Perform the linear transformation Y = AX
     # Y contains the new coordinates for every pixel
