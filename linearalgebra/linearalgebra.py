@@ -1,7 +1,7 @@
 from parser import Parser, ParseTree
 import numpy as np
 
-FILENAME = 'problems/problem4.txt'
+FILENAME = 'problems/problem5.txt'
 
 parser = Parser()
 result = parser.parse(FILENAME)
