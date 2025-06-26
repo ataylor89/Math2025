@@ -48,15 +48,6 @@ import math
 # The main functions in this module are rotate, reflectx, and reflecty.
 # The other functions serve as utility functions.
 
-# Gets the x, y coordinates of a pixel in an nxm image
-def get_xy(row, col, n, m):
-    i, j = col + 0.5, row + 0.5
-    return [i - m/2, n/2 - j]
-
-# Gets the row and column of a pixel in an nxm image
-def get_rowcol(x, y, n, m):
-    return [int(n/2 - y), int(x + m/2)]
-
 # Rotates an image around the origin by the specified number of radians
 def rotate(filename, radians):
     A = [[math.cos(radians), -1 * math.sin(radians)],
@@ -121,3 +112,12 @@ def transform(filename, A):
         canvas[row_t][col_t] = img[row][col]
 
     return canvas
+
+# Gets the x, y coordinates of a pixel in an nxm image
+def get_xy(row, col, n, m):
+    i, j = col + 0.5, row + 0.5
+    return [i - m/2, n/2 - j]
+
+# Gets the row and column of a pixel in an nxm image
+def get_rowcol(x, y, n, m):
+    return [int(n/2 - y), int(x + m/2)]
