@@ -41,7 +41,7 @@
 # There are many ways of solving for (x, y). Three approaches we can take are:
 # (1) Elimination or Gaussian elimination
 # (2) Substitution
-# (3) Inverting the lefthand matrix, and left-multiplying both sides by the inverse.
+# (3) Inverting the coefficients matrix, and left-multiplying both sides by the inverse.
 #
 # In this program we take the third approach, matrix inversion, using the helper functions from numpy.
 
