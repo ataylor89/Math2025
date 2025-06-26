@@ -1,5 +1,3 @@
-import re
-
 class ParseTree:
     def __init__(self, coefficients, variables, constants):
         self.coefficients = coefficients
