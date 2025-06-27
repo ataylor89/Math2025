@@ -1,3 +1,7 @@
+import sys
+
+ERROR_MSG = "Usage: python primes.py <n>"
+
 # We start with a sieve of size 100*n
 #
 # If that's not big enough to hold n primes, we will increase the sieve size, repeatedly,
@@ -5,11 +9,6 @@
 #
 # After we are sure that our sieve holds the first n primes, we extract every prime from the sieve,
 # and we use list slicing (primes[0:n) to get the first n primes
-
-import sys
-
-ERROR_MSG = "Usage: python primes.py <n>"
-
 def generate(n):
     size = 100 * n
     s = sieve(n, size)
