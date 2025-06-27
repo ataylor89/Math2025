@@ -18,11 +18,11 @@ class Polynomial:
 
     def solve(self):
         if self.degree == 2:
-            return self.solve_quadratic()
+            return self._solve_quadratic()
         else:
             print("Currently, this class only supports quadratic polynomials.")
 
-    def solve_quadratic(self):
+    def _solve_quadratic(self):
         if self.degree != 2:
             return
         a = self.coefficients[2]
