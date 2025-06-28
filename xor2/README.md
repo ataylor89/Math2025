@@ -18,8 +18,8 @@ MSG = (MSG xor KEY) xor KEY
 We can apply XOR encryption a first time to encrypt a message, and we can use the same algorithm a second time to decrypt a message.
 
 To show this, we can run the following commands, from the root of this repository:
-% python keygen.py message.txt key.txt
-% python message.txt key.txt > encrypted_message.txt
+% python keygen.py message.txt key.txt\
+% python message.txt key.txt > encrypted_message.txt\
 % python encrypted_message.txt key.txt > decrypted_message.txt
 
 After running these commands, you will see that message.txt is equivalent to decrypted_message.txt.
