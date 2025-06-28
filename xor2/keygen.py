@@ -1,22 +1,22 @@
 import random
 import sys
 
-ERROR_MSG = "Usage: python keygen.py <inputfile> <outputfile>"
+ERROR_MSG = "Usage: python keygen.py <msgfile> <keyfile>"
 
 def main():
     if len(sys.argv) != 3:
         print(ERROR_MSG)
         sys.exit(0)
 
-    input_file = open(sys.argv[1], "r")
-    content = input_file.read()
-    filesize = len(content)
+    msgfile = open(sys.argv[1], "r")
+    msg = msgfile.read()
+    msglen = len(msg)
     
-    key = [chr(random.randint(0, 255)) for i in range(0, filesize)]
+    key = [chr(random.randint(0, 255)) for i in range(0, msglen)]
     key = ''.join(key)
 
-    output_file = open(sys.argv[2], "w")
-    output_file.write(key)
+    keyfile = open(sys.argv[2], "w")
+    keyfile.write(key)
 
 if __name__ == "__main__":
     main()

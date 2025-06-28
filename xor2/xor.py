@@ -1,6 +1,6 @@
 import sys
 
-ERROR_USER_INPUT = "Usage: python xor.py <key> <path_to_file>"
+ERROR_USER_INPUT = "Usage: python xor.py <keyfile> <msgfile>"
 ERROR_KEYSIZE = "The key has to be the same size as the message."
 
 def crypt(key, msg):
