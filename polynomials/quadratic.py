@@ -1,4 +1,6 @@
-from polynomials import Polynomial, ComplexNumber
+from polynomials import Polynomial
+from complexnumbers import ComplexNumber
+
 import math
 import sys
 
