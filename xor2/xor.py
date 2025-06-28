@@ -1,6 +1,6 @@
 import sys
 
-ERROR_INPUT = "Usage: python xor.py <key> <path_to_file>"
+ERROR_USER_INPUT = "Usage: python xor.py <key> <path_to_file>"
 ERROR_KEYSIZE = "The key has to be the same size as the message."
 
 def crypt(key, msg):
@@ -14,7 +14,7 @@ def crypt(key, msg):
 
 def main():
     if len(sys.argv) != 3:
-        print(ERROR_INPUT)
+        print(ERROR_USER_INPUT)
         sys.exit(0)
     
     keyfile = open(sys.argv[1], "r")
