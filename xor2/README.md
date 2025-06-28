@@ -6,10 +6,10 @@ In the xor repository, I offered a long-winded introduction to XOR encryption.
 Let's make this introduction short.
 
 XOR is useful in encryption because it has the following properties:
-1. Commutative: A xor B = B xor A\
-2. Associative: A xor (B xor C) = (A xor B) xor C\
-3. Identity: A xor 0 = A\
-4. Self-inverse: A xor A = 0\
+1. Commutative: A xor B = B xor A
+2. Associative: A xor (B xor C) = (A xor B) xor C
+3. Identity: A xor 0 = A
+4. Self-inverse: A xor A = 0
 
 We can use these properties to show that...
 
