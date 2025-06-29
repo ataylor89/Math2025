@@ -9,8 +9,8 @@ ERROR_MSG = "Usage: python keygen.py"
 kmin = 10
 kmax = 20
 
-test_files = ["test.txt"]
-tests = []
+test_file = "test.txt"
+test_message = ""
 
 def gen_keys():
     keys = []
@@ -35,36 +35,34 @@ def gen_keys():
     return keys
 
 def test(n, e, d):
-    for msg in tests:
-        bytes = list(map(lambda x: ord(x), msg))
+    bytes = list(map(lambda x: ord(x), test_message))
 
-        encrypted = []
-        for i in range(0, len(bytes)):
-            encrypted.append(bytes[i]**e % n)
+    encrypted = []
+    for i in range(0, len(bytes)):
+        encrypted.append(bytes[i]**e % n)
 
-        decrypted = []
-        for i in range(0, len(bytes)):
-            decrypted.append(encrypted[i]**d % n)
-
-        if bytes != decrypted:
-            return False
-    return True
+    decrypted = []
+    for i in range(0, len(bytes)):
+        decrypted.append(encrypted[i]**d % n)
+    
+    return bytes == decrypted
 
 def main():
     if len(sys.argv) != 1:
         print(ERROR_MSG)
         sys.exit(0)
 
-    for filename in test_files:
-        file = open(filename, "r")
-        message = file.read()
-        tests.append(message)
+    file = open(test_file, "r")
+
+    global test_message
+    test_message = file.read()
 
     keys = gen_keys()
 
     with open("publickey.txt", "w") as file:
         for (n, e, d) in keys:
             file.write("n=%d e=%d\n" %(n, e))
+    
     with open("privatekey.txt", "w") as file:
         for (n, e, d) in keys:
             file.write("n=%d d=%d\n" %(n, d))
