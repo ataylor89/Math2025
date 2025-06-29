@@ -9,8 +9,7 @@ def decrypt(cipher, key):
     keylen = len(key)
     for i in range(0, len(cipher)):
         (n, d) = key[i % keylen]
-        m = cipher[i]**d % n
-        msg += chr(m)
+        msg += chr(cipher[i]**d % n)
     return msg
 
 def main():
