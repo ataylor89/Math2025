@@ -1,8 +1,8 @@
 import primes
 import random
 
-nmin = 10
-nmax = 100
+nmin = 1
+nmax = 50
 
 def gen_keys():
     p = primes.nthprime(random.randint(nmin,nmax))

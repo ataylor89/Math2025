@@ -4,9 +4,8 @@ def numbytes(n):
         k += 1
     return k
 
-def to_string(n):
+def to_string(n, k):
     str = ""
-    k = numbytes(n)
     for i in range(0, k):
         bitmask = 0xFF << (8 * (k - i - 1))
         str += chr((n & bitmask) >> (8 * (k - i - 1)))
@@ -19,13 +18,13 @@ def to_number(str):
         n += ord(str[i]) << (8 * (k - i - 1))
     return n
 
-#n = 123456
+#n = 1013014910920
 #print("n = %d" %n)
 
 #k = numbytes(n)
 #print("k = %d" %k)
 
-#s = to_string(n)
+#s = to_string(n, k)
 #print(s)
 #n = to_number(s)
 #print(n)

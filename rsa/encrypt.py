@@ -7,8 +7,8 @@ ERROR_MSG = "Usage: python encrypt.py <msg> <n> <e>"
 def encrypt(msg, n, e):
     bytes = list(map(lambda x: ord(x), msg))
     crypt = list(map(lambda x: x**e % n, bytes))
-    cipher = ''.join([util.to_string(crypt[i]) for i in range(0, len(crypt))])
-    return cipher
+    k = util.numbytes(n)
+    return ''.join([util.to_string(x, k) for x in crypt])
 
 def main():
     if len(sys.argv) != 3:
