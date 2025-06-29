@@ -1,6 +1,6 @@
 import sys
 
-ERROR_USER_INPUT = "Usage: python xor.py <msg> [key]"
+ERROR_USER_INPUT = "Usage: python xor.py <msg>"
 
 def crypt(msg, key):
     msglen = len(msg)
@@ -13,18 +13,14 @@ def crypt(msg, key):
     return ''.join(out)
 
 def main():
-    argc = len(sys.argv)
-
-    if argc < 2 or argc > 3:
+    if len(sys.argv) != 2:
         print(ERROR_USER_INPUT)
         sys.exit(0)
 
     msgfile = open(sys.argv[1], "r")
     msg = msgfile.read()
 
-    path = "key.txt" if argc == 2 else sys.argv[2]
-
-    keyfile = open(path, "r")
+    keyfile = open("key.txt", "r")
     key = keyfile.read()
 
     print(crypt(msg, key), end='')
