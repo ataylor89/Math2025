@@ -1,23 +1,23 @@
-import primes
+import primetable
 import util
 import math
 import random
 import sys
 
-KEY_LEN = 16
+KEY_LEN = 1
 ERROR_MSG = "Usage: python keygen.py"
 
-kmin = 1000
-kmax = 2000
+kmin = 10**2
+kmax = 10**3
 
 test_file = "test.txt"
 
 def gen_keys():
     keys = []
-    primes.init(kmax)
+    primetable.load("primetable.pickle")
     while len(keys) < KEY_LEN:
-        p = primes.nthprime(random.randint(kmin,kmax))
-        q = primes.nthprime(random.randint(kmin,kmax))
+        p = primetable.get(random.randint(kmin,kmax))
+        q = primetable.get(random.randint(kmin,kmax))
         n = p * q
         phi = math.lcm(p-1,q-1)
 
