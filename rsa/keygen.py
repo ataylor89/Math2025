@@ -3,16 +3,17 @@ import math
 import random
 import sys
 
-KEY_LEN = 128
+KEY_LEN = 4
 ERROR_MSG = "Usage: python keygen.py"
 
-kmin = 100
-kmax = 200
+kmin = 1000
+kmax = 2000
 
 test_file = "test.txt"
 
 def gen_keys():
     keys = []
+    primes.init(kmax)
     while len(keys) < KEY_LEN:
         p = primes.nthprime(random.randint(kmin,kmax))
         q = primes.nthprime(random.randint(kmin,kmax))
@@ -30,6 +31,7 @@ def gen_keys():
                 break
 
         if test(n, e, d):
+            print("Adding key (n=%d, e=%d, d=%d)" %(n, e, d))
             keys.append((n, e, d))
     return keys
 

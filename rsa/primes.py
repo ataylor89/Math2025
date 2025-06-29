@@ -3,17 +3,17 @@ import sys
 ERROR_MSG = "Usage: python primes.py <n>"
 
 def nthprime(n):
-    primes = generate(n)
     return primes[n-1]
 
-def generate(n):
+def init(n):
+    global primes
+
     size = 100 * n
     s = sieve(n, size)
     while s.count('P') < n:
         size *= 100
         s = sieve(n, size)
     primes = [i for i, j in enumerate(s) if j == 'P']
-    return primes[0:n]
 
 def sieve(n, size):
     sieve = ['P'] * size
@@ -42,8 +42,8 @@ def main():
         print(ERROR_MSG)
         sys.exit(0)
  
+    init(n)
     print(nthprime(n))
-    #print(generate(n))
 
 if __name__ == "__main__":
     main()

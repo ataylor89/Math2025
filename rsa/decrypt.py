@@ -1,4 +1,5 @@
 import parser
+import util
 import pickle
 import sys
 
@@ -9,10 +10,12 @@ def decrypt(cipher, key):
     keylen = len(key)
     for i in range(0, len(cipher)):
         (n, d) = key[i % keylen]
-        res = 1
-        for j in range(0, d):
-            res = (res * cipher[i]) % n
-        msg += chr(res)
+        msg += chr(util.power_mod_m(cipher[i], d, n))
+        #msg += chr(cipher[i]**d % n)
+        #res = 1
+        #for j in range(0, d):
+        #    res = (res * cipher[i]) % n
+        #msg += chr(res)
     return msg
 
 def main():
