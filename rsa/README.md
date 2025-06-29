@@ -1,4 +1,4 @@
-# RSA Encryption
+# RSA encryption
 
 ## Usage
 To test the encryption algorithm, you can type the following commands:
