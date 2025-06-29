@@ -7,7 +7,10 @@ To test the encryption algorithm, you can type the following commands:
 % python encrypt.py message.txt publickey.txt > cipher.txt\
 % python decrypt.py cipher.txt privatekey.txt
 
-## The problem
-The problem with this repository is that the encryption algorithm is very easy to crack. You can just bruteforce the d value if you already know the n value.
+## How secure is this algorithm?
+If a hacker knows the public key, then they can actually bruteforce the private key, by trying every possible d value between 1 and n.
 
-The xor2 repository has a secure encryption algorithm... but this repository does not.
+But if the hacker does not know the public key, then it's fairly secure.
+
+## Obstacles and challenges
+I have tested this encryption algorithm a number of times. It works like 90% of the time. 10% of the time, the decrypted text is close to the original, but not exactly the original. I'm still investigating why this is.
