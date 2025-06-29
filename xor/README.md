@@ -30,7 +30,7 @@ I think that... if you understand XOR encryption... then you have a really good 
 
 I had a lot of fun writing this repository. The repository demonstrates a secure encryption algorithm, and how it can be used to send secure communications.
 
-I might add to these readmes over time, but that's all for now.
+I might add to this readme over time, but that's all for now.
 
 The day is Saturday, June 28, 2025, and I'm already thinking about what I will eat for dinner and what TV shows I am going to watch. Perhaps I'll watch The Legend of Korra. I'm not sure what I will have for dinner.
 
