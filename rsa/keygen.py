@@ -30,8 +30,11 @@ def gen_keys():
     return (n, e, d)
 
 def main():
-    keys = gen_keys()
-    print("n=%d e=%d d=%d" %(keys[0], keys[1], keys[2]))
+    (n, e, d) = gen_keys()
+    with open("publickey.txt", "w") as file:
+        file.write("n=%d e=%d" %(n, e))
+    with open("privatekey.txt", "w") as file:
+        file.write("n=%d d=%d" %(n, d))
 
 if __name__ == "__main__":
     main()

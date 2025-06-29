@@ -17,7 +17,7 @@ def main():
 
     msgfile = open(sys.argv[1], "r")
     msg = msgfile.read()
-    (n, e, d) = parser.parse_keys(sys.argv[2])
+    (n, e) = parser.parse_key(sys.argv[2])
     cipher = encrypt(msg, n, e)
     print(cipher, end='')
 

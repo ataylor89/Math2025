@@ -1,8 +1,5 @@
-def parse_keys(path):
+def parse_key(path):
     file = open(path, "r")
     content = file.read()
     tokens = content.split()
-    n = int(tokens[0][2:])
-    e = int(tokens[1][2:])
-    d = int(tokens[2][2:])
-    return (n, e, d)
+    return (int(tokens[0][2:]), int(tokens[1][2:]))

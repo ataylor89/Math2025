@@ -21,7 +21,7 @@ def main():
 
     cipherfile = open(sys.argv[1], "r")
     cipher = cipherfile.read()
-    (n, e, d) = parser.parse_keys(sys.argv[2])
+    (n, d) = parser.parse_key(sys.argv[2])
     msg = decrypt(cipher, n, d)
     print(msg, end='')
 
