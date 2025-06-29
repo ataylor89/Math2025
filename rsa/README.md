@@ -12,7 +12,7 @@ If a hacker knows the public key, then they can actually bruteforce the private 
 
 If the hacker does not know the public key, then it's less easy to crack.
 
-## Obstacles and challenges
+## Challenges
 I have tested this encryption algorithm a number of times. It works like 90% of the time. 10% of the time, the decrypted text is close to the original, but not exactly the original. I'm still investigating why this is.
 
 ## How can we make this algorithm more secure?
