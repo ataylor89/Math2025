@@ -1,25 +1,31 @@
 import parser
-import util
+import pickle
 import sys
 
-ERROR_MSG = "Usage: python encrypt.py <msg> <n> <e>"
+ERROR_USER_INPUT = "Usage: python encrypt.py <msg> <key>"
 
-def encrypt(msg, n, e):
+def encrypt(msg, key):
     bytes = list(map(lambda x: ord(x), msg))
-    crypt = list(map(lambda x: x**e % n, bytes))
-    k = util.numbytes(n)
-    return ''.join([util.to_string(x, k) for x in crypt])
+    keylen = len(key)
+    cipher = []
+    for i in range(0, len(bytes)):
+        (n, e) = key[i % keylen]
+        cipher.append(bytes[i]**e % n)
+    return cipher
 
 def main():
     if len(sys.argv) != 3:
-        print(ERROR_MSG)
+        print(ERROR_USER_INPUT)
         sys.exit(0)
 
     msgfile = open(sys.argv[1], "r")
+
     msg = msgfile.read()
-    (n, e) = parser.parse_key(sys.argv[2])
-    cipher = encrypt(msg, n, e)
-    print(cipher, end='')
+    key = parser.parse_key(sys.argv[2])
+    cipher = encrypt(msg, key)
+
+    cipherfile = open("cipher.txt", "wb")
+    pickle.dump(cipher, cipherfile)
 
 if __name__ == "__main__":
     main()

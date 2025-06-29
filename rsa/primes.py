@@ -27,11 +27,6 @@ def sieve(n, size):
                 j += 1
     return sieve
 
-def gcd(a, b):
-    if a == 0:
-        return b
-    return gcd(b % a, a)
-
 def main():
     if len(sys.argv) != 2:    
         print(ERROR_MSG)
