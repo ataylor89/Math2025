@@ -28,7 +28,7 @@ Suppose Alice has a mother named Barbara. Alice can figure out a secure way to s
 
 I think that... if you understand XOR encryption... then you have a really good grasp of encryption.
 
-I had a lot of fun writing the xor repository. The xor repository really demonstrates a secure encryption algorithm, and how it can be used to send secure communications.
+I had a lot of fun writing this repository. The repository demonstrates a secure encryption algorithm, and how it can be used to send secure communications.
 
 I might add to these readmes over time, but that's all for now.
 
