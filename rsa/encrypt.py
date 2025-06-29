@@ -2,7 +2,7 @@ import parser
 import pickle
 import sys
 
-ERROR_USER_INPUT = "Usage: python encrypt.py <msg> <key>"
+ERROR_USER_INPUT = "Usage: python encrypt.py <msg> [key]"
 
 def encrypt(msg, key):
     bytes = list(map(lambda x: ord(x), msg))
@@ -14,14 +14,18 @@ def encrypt(msg, key):
     return cipher
 
 def main():
-    if len(sys.argv) != 3:
+    argc = len(sys.argv)
+
+    if argc < 2 or argc > 3:
         print(ERROR_USER_INPUT)
         sys.exit(0)
 
     msgfile = open(sys.argv[1], "r")
-
     msg = msgfile.read()
-    key = parser.parse_key(sys.argv[2])
+
+    path = "publickey.txt" if argc == 2 else sys.argv[2]
+
+    key = parser.parse_key(path)
     cipher = encrypt(msg, key)
 
     cipherfile = open("cipher.txt", "wb")
