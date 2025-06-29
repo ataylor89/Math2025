@@ -35,3 +35,6 @@ I might add to this readme over time, but that's all for now.
 The day is Saturday, June 28, 2025, and I'm already thinking about what I will eat for dinner and what TV shows I am going to watch. Perhaps I'll watch The Legend of Korra. I'm not sure what I will have for dinner.
 
 Thanks for reading.
+
+Addendum:
+1. The encrypted message is often called the cipher or the ciphertext. That's why I name my file cipher.txt when I write the encrypted message to a file. This also explains the origin of the word "decipher".
