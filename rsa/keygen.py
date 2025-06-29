@@ -10,7 +10,6 @@ kmin = 100
 kmax = 200
 
 test_file = "test.txt"
-test_message = ""
 
 def gen_keys():
     keys = []
