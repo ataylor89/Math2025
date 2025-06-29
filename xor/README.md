@@ -22,7 +22,7 @@ After running these commands, you will see that message.txt is equivalent to dec
 
 We have explained why XOR is useful in encryption. There's one more thing I want to explain.
 
-XOR encryption is actually very secure, when the key is randomly generated, and when the key is long. The encryption algorithm contained in this repository is actually very secure.
+XOR encryption is relatively secure. If the key is randomly generated, and long enough in length (e.g. 1024 bytes in length or even 4096 bytes in length) then the encryption algorithm is fairly secure.
 
 Suppose Alice has a mother named Barbara. Alice can figure out a secure way to send her mom a key file. Then her mom can use the key file to decrypt Barbara's encrypted messages. Only Alice and Barbara have the key file, and they can use it to send each other secure communications.
 
