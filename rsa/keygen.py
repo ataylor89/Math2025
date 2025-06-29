@@ -1,9 +1,10 @@
 import primes
+import util
 import math
 import random
 import sys
 
-KEY_LEN = 4
+KEY_LEN = 16
 ERROR_MSG = "Usage: python keygen.py"
 
 kmin = 1000
@@ -40,17 +41,11 @@ def test(n, e, d):
 
     encrypted = []
     for i in range(0, len(bytes)):
-        res = 1
-        for j in range(0, e):
-            res = (res * bytes[i]) % n
-        encrypted.append(res)
+        encrypted.append(util.power_mod_m(bytes[i], e, n))
 
     decrypted = []
     for i in range(0, len(bytes)):
-        res = 1
-        for j in range(0, d):
-            res = (res * encrypted[i]) % n
-        decrypted.append(res)
+        decrypted.append(util.power_mod_m(encrypted[i], d, n))
     
     return bytes == decrypted
 

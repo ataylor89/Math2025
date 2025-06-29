@@ -12,11 +12,6 @@ def encrypt(msg, key):
     for i in range(0, len(bytes)):
         (n, e) = key[i % keylen]
         cipher.append(util.power_mod_m(bytes[i], e, n))
-        #cipher.append(bytes[i]**e % n)
-        #res = 1
-        #for j in range(0, e):
-            #res = (res * bytes[i]) % n
-        #cipher.append(res)
     return cipher
 
 def main():

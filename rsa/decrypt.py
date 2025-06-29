@@ -11,11 +11,6 @@ def decrypt(cipher, key):
     for i in range(0, len(cipher)):
         (n, d) = key[i % keylen]
         msg += chr(util.power_mod_m(cipher[i], d, n))
-        #msg += chr(cipher[i]**d % n)
-        #res = 1
-        #for j in range(0, d):
-        #    res = (res * cipher[i]) % n
-        #msg += chr(res)
     return msg
 
 def main():
