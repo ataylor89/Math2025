@@ -16,16 +16,14 @@ def gen_keys():
     #print("phi = %d" %phi)
 
     e = 0
-    for i in range(2, phi):
-        if primes.gcd(i, phi) == 1:
-            e = i
+    for e in range(2, phi):
+        if primes.gcd(e, phi) == 1:
             break
     #print("e = %d" %e)
 
     d = 0
-    for i in range(2, phi):
-        if (e * i) % phi == 1:
-            d = i
+    for d in range(2, phi):
+        if (e * d) % phi == 1:
             break
     #print("d = %d" %d)
 
