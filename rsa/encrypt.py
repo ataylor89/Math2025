@@ -10,7 +10,10 @@ def encrypt(msg, key):
     cipher = []
     for i in range(0, len(bytes)):
         (n, e) = key[i % keylen]
-        cipher.append(bytes[i]**e % n)
+        res = 1
+        for j in range(0, e):
+            res = (res * bytes[i]) % n
+        cipher.append(res)
     return cipher
 
 def main():

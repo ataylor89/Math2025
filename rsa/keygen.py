@@ -3,11 +3,11 @@ import math
 import random
 import sys
 
-KEY_LEN = 256
+KEY_LEN = 128
 ERROR_MSG = "Usage: python keygen.py"
 
-kmin = 10
-kmax = 20
+kmin = 100
+kmax = 200
 
 test_file = "test.txt"
 test_message = ""
@@ -39,11 +39,17 @@ def test(n, e, d):
 
     encrypted = []
     for i in range(0, len(bytes)):
-        encrypted.append(bytes[i]**e % n)
+        res = 1
+        for j in range(0, e):
+            res = (res * bytes[i]) % n
+        encrypted.append(res)
 
     decrypted = []
     for i in range(0, len(bytes)):
-        decrypted.append(encrypted[i]**d % n)
+        res = 1
+        for j in range(0, d):
+            res = (res * encrypted[i]) % n
+        decrypted.append(res)
     
     return bytes == decrypted
 
