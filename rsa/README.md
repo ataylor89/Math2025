@@ -7,7 +7,7 @@ To test the encryption algorithm, you can type the following commands:
 % python encrypt.py message.txt publickey.txt\
 % python decrypt.py cipher.txt privatekey.txt
 
-You can also omit the key files, on the command-line, in which case they will be read from the default locations.
+If the second argument is omitted (the path to the key file) then the key will be read from the default location.
 
 % python keygen.py message.txt\
 % python encrypt.py message.txt\
