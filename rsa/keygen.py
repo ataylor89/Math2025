@@ -3,12 +3,15 @@ import math
 import random
 import sys
 
-ERROR_MSG = "Usage: python keygen.py <msg>"
+ERROR_MSG = "Usage: python keygen.py"
 
 kmin = 10
 kmax = 20
 
-def gen_keys(msg):
+test_files = ["test.txt"]
+tests = []
+
+def gen_keys():
     keys = []
     while len(keys) < 256:
         p = primes.nthprime(random.randint(kmin,kmax))
@@ -26,32 +29,37 @@ def gen_keys(msg):
             if (d * e) % phi == 1:
                 break
 
-        if test(msg, n, e, d):
+        if test(n, e, d):
             keys.append((n, e, d))
     return keys
 
-def test(msg, n, e, d):
-    bytes = list(map(lambda x: ord(x), msg))
+def test(n, e, d):
+    for msg in tests:
+        bytes = list(map(lambda x: ord(x), msg))
 
-    encrypted = []
-    for i in range(0, len(bytes)):
-        encrypted.append(bytes[i]**e % n)
+        encrypted = []
+        for i in range(0, len(bytes)):
+            encrypted.append(bytes[i]**e % n)
 
-    decrypted = []
-    for i in range(0, len(bytes)):
-        decrypted.append(encrypted[i]**d % n)
+        decrypted = []
+        for i in range(0, len(bytes)):
+            decrypted.append(encrypted[i]**d % n)
 
-    return bytes == decrypted
+        if bytes != decrypted:
+            return False
+    return True
 
 def main():
-    if len(sys.argv) != 2:
+    if len(sys.argv) != 1:
         print(ERROR_MSG)
         sys.exit(0)
 
-    msgfile = open(sys.argv[1], "r")
+    for filename in test_files:
+        file = open(filename, "r")
+        message = file.read()
+        tests.append(message)
 
-    msg = msgfile.read()
-    keys = gen_keys(msg)
+    keys = gen_keys()
 
     with open("publickey.txt", "w") as file:
         for (n, e, d) in keys:
