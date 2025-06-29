@@ -3,6 +3,7 @@ import math
 import random
 import sys
 
+KEY_LEN = 256
 ERROR_MSG = "Usage: python keygen.py"
 
 kmin = 10
@@ -13,7 +14,7 @@ tests = []
 
 def gen_keys():
     keys = []
-    while len(keys) < 256:
+    while len(keys) < KEY_LEN:
         p = primes.nthprime(random.randint(kmin,kmax))
         q = primes.nthprime(random.randint(kmin,kmax))
         n = p * q
