@@ -2,7 +2,7 @@ import parser
 import pickle
 import sys
 
-ERROR_USER_INPUT = "Usage: python decrypt.py <msg> [key]"
+ERROR_USER_INPUT = "Usage: python decrypt.py <msg>"
 
 def decrypt(cipher, key):
     msg = ""
@@ -14,18 +14,14 @@ def decrypt(cipher, key):
     return msg
 
 def main():
-    argc = len(sys.argv)
-
-    if argc < 2 or argc > 3:
+    if len(sys.argv) != 2:
         print(ERROR_USER_INPUT)
         sys.exit(0)
 
     cipherfile = open(sys.argv[1], "rb")
     cipher = pickle.load(cipherfile)
 
-    path = "privatekey.txt" if argc == 2 else sys.argv[2]
-    key = parser.parse_key(path)
-
+    key = parser.parse_key("privatekey.txt")
     msg = decrypt(cipher, key)
     print(msg, end='')
 
