@@ -38,5 +38,5 @@ Thanks for reading.
 
 Addendum:
 1. The encrypted message is often called the cipher or the ciphertext. That's why I name my file cipher.txt when I write the encrypted message to a file. This also explains the origin of the word "decipher".
-2. XOR encryption is an example of symmetric key cryptography. RSA encryption, which we explore in a separate project, is an example of asymmetric key crytography, also called public key cryptography.
-3. In XOR encryption we have only one key, and it's a private key. In RSA encryption, we have two keys, a public key and a private key.
+2. XOR encryption is an example of symmetric key cryptography, which is also known as private key cryptography. In XOR encryption we have only one key, and it's a private key.
+3. RSA encryption, which we explore in a separate project, is an example of asymmetric key cryptography, which is also known as public key crytography. In RSA encryption we have two keys, a public key and a private key.
