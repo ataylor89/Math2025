@@ -3,7 +3,7 @@
 ## Usage
 To test the encryption algorithm, you can type the following commands:
 
-\# Generate a prime table of one million primes
+\# Generate a prime table of one million primes\
 % python primetable.py 1000000
 
 \# Generate a key table with 8 keys and a threshold of one billion\
