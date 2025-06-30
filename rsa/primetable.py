@@ -6,7 +6,6 @@ error_msg = "Usage: python primetable.py <n>"
 already_exists = False
 already_exists_msg = "Existing table is sufficient"
 
-
 # Gets the nth prime from the prime table
 def get(n):
     return table[n-1]
