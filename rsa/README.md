@@ -3,17 +3,17 @@
 ## Usage
 To test the encryption algorithm, you can type the following commands:
 
-\# Generate a prime table of one million primes\
-% python primetable.py 1000000\
+\# Generate a prime table of one million primes
+% python primetable.py 1000000
 
 \# Generate a key table with 8 keys and a threshold of one billion\
 % python keytable.py 8 1000000000
 
 \# Generate a key pair\
-% python keygen.py\
+% python keygen.py
 
 \# Encrypt a message using our public key\
-% python encrypt.py message.txt\
+% python encrypt.py message.txt
 
 \# Decrypt the cipher using our private key\
 % python decrypt.py cipher.txt
