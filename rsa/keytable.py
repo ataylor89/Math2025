@@ -6,8 +6,11 @@ import sys
 import os
 
 error_msg = "Usage: python keytable.py <size> <threshold>"
+
 already_exists = False
 already_exists_msg = "The existing table is sufficient"
+
+test_message = "hello world! my name is andrew"
 
 # Loads a key table from the file path
 def load(path):
@@ -28,13 +31,15 @@ def generate(s, t):
     global table
     global already_exists
 
+    load("keytable.pickle")
+
     if 'table' not in globals():
         table = {
             'threshold': t,
             'table': {}
         }
 
-    if table['threshold'] == t and len(table['table']) >= s:
+    if table['threshold'] >= t and len(table['table']) >= s:
         already_exists = True
         return
     
@@ -42,7 +47,7 @@ def generate(s, t):
     primetable.load("primetable.pickle")
     ptablesize = primetable.size()
     
-    for i in range(0, ptablesize):
+    for i in range(1, ptablesize):
         p = primetable.get(i)
         if p**2 >= t:
             kmin = i
@@ -75,9 +80,24 @@ def generate(s, t):
                 if (d * e) % phi == 1:
                     break
 
-            table['table'][n] = (n, p, q, phi, e, d)
+            if test(n, e, d):
+                print("Adding key (n=%d, p=%d, q=%d, phi=%d, e=%d, d=%d)" %(n, p, q, phi, e, d))
+                table['table'][n] = (n, p, q, phi, e, d)
 
     already_exists = False
+
+def test(n, e, d):
+    bytes = list(map(lambda x: ord(x), test_message))
+
+    encrypted = []
+    for i in range(0, len(bytes)):
+        encrypted.append(util.power_mod_m(bytes[i], e, n))
+
+    decrypted = []
+    for i in range(0, len(bytes)):
+        decrypted.append(util.power_mod_m(encrypted[i], d, n))
+
+    return bytes == decrypted
 
 def main():
     if len(sys.argv) != 3:
@@ -96,5 +116,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-load("keytable.pickle")
