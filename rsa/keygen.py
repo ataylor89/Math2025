@@ -2,8 +2,8 @@ import keytable
 import random
 import sys
 
-key_len = 4
-threshold = 10**5
+key_len = 16
+threshold = 10**6
 error_msg = "Usage: python keygen.py"
 
 def gen_keys():

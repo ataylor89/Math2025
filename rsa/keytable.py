@@ -33,16 +33,16 @@ def generate(s, t):
 
     load("keytable.pickle")
 
-    if 'table' not in globals():
+    if 'table' in globals() and table['threshold'] >= t and len(table['table']) >= s:
+        already_exists = True
+        return
+ 
+    if 'table' not in globals() or table['threshold'] < t:
         table = {
             'threshold': t,
             'table': {}
         }
 
-    if table['threshold'] >= t and len(table['table']) >= s:
-        already_exists = True
-        return
-    
     kmin = 0
     primetable.load("primetable.pickle")
     ptablesize = primetable.size()
