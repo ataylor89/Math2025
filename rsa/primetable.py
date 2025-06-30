@@ -2,29 +2,43 @@ import pickle
 import sys
 import os
 
-ERROR_MSG = "Usage: python primetable.py <n>"
-EXISTING_TABLE_SUFFICIENT = "The existing prime table is sufficient"
+error_msg = "Usage: python primetable.py <n>"
+already_exists = False
+already_exists_msg = "Existing table is sufficient"
+
 
 # Gets the nth prime from the prime table
 def get(n):
     return table[n-1]
 
+# Gets the size of our prime table
+def size():
+    return len(table)
+
 # Loads a prime table from a file
 def load(path):
     global table
 
-    file = open(path, "rb")
-    table = pickle.load(file)
+    if os.path.exists(path):
+        file = open(path, "rb")
+        table = pickle.load(file)
 
 # Saves the prime table to a file
 def save(path):
-    if table:
+    if table and not already_exists:
         file = open(path, "wb")
         pickle.dump(table, file)
 
 # Generates a prime table of size n
 def generate(n):
     global table
+    global already_exists
+
+    if os.path.exists("primetable.pickle"):
+        load("primetable.pickle")
+        if len(table) >= n:
+            already_exists = True
+            return
 
     size = 100 * n
     s = _sieve(n, size)
@@ -32,6 +46,8 @@ def generate(n):
         size *= 100
         s = _sieve(n, size)
     table = [i for i, j in enumerate(s) if j == 'P'][0:n]
+
+    already_exists = False
 
 # Helper function used to create our prime table
 def _sieve(n, size):
@@ -48,27 +64,27 @@ def _sieve(n, size):
 
 def main():
     if len(sys.argv) != 2:    
-        print(ERROR_MSG)
+        print(error_msg)
         sys.exit(0)
 
     try:
         n = int(sys.argv[1])
     except:
-        print(ERROR_MSG)
+        print(error_msg)
         sys.exit(0)
 
     if n <= 0:
-        print(ERROR_MSG)
+        print(error_msg)
         sys.exit(0)
  
-    if os.path.exists("primetable.pickle"):
-        load("primetable.pickle")
-        if len(table) >= n:
-            print(EXISTING_TABLE_SUFFICIENT)
-            sys.exit(0)
-
     generate(n)
-    save("primetable.pickle")
+
+    if already_exists:
+        print(already_exists_msg)
+    else:
+        save("primetable.pickle")
 
 if __name__ == "__main__":
     main()
+
+load("primetable.pickle")

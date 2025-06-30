@@ -1,0 +1,100 @@
+import primetable
+import util
+import math
+import pickle
+import sys
+import os
+
+error_msg = "Usage: python keytable.py <size> <threshold>"
+already_exists = False
+already_exists_msg = "The existing table is sufficient"
+
+# Loads a key table from the file path
+def load(path):
+    global table
+
+    if os.path.exists(path):
+        file = open(path, "rb")
+        table = pickle.load(file)
+
+# Saves a key table to the file path
+def save(path):
+    if table and not already_exists:
+        file = open(path, "wb")
+        pickle.dump(table, file)
+
+# Generates a key table of size s with threshold t
+def generate(s, t):
+    global table
+    global already_exists
+
+    if 'table' not in globals():
+        table = {
+            'threshold': t,
+            'table': {}
+        }
+
+    if table['threshold'] == t and len(table['table']) >= s:
+        already_exists = True
+        return
+    
+    kmin = 0
+    primetable.load("primetable.pickle")
+    ptablesize = primetable.size()
+    
+    for i in range(0, ptablesize):
+        p = primetable.get(i)
+        if p**2 >= t:
+            kmin = i
+            break
+
+    for i in range(kmin, ptablesize):
+        if len(table['table']) >= s:
+            break
+
+        for j in range(kmin, ptablesize):
+            if len(table['table']) >= s:
+                break
+
+            p = primetable.get(i)
+            q = primetable.get(j)
+            n = p * q
+
+            if n in table['table']:
+                continue
+
+            phi = math.lcm(p-1, q-1)
+
+            e = 0
+            for e in range(2, phi):
+                if math.gcd(e, phi) == 1:
+                    break
+
+            d = 0
+            for d in range(2, phi):
+                if (d * e) % phi == 1:
+                    break
+
+            table['table'][n] = (n, p, q, phi, e, d)
+
+    already_exists = False
+
+def main():
+    if len(sys.argv) != 3:
+        print(ERROR_MSG)
+        sys.exit(0)
+
+    size = int(sys.argv[1])
+    threshold = int(sys.argv[2])
+    
+    generate(size, threshold)
+
+    if already_exists:
+        print(already_exists_msg)
+    else:
+        save("keytable.pickle")
+
+if __name__ == "__main__":
+    main()
+
+load("keytable.pickle")
