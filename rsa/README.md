@@ -29,4 +29,4 @@ We can run keytable.py on AWS cloud, in a cluster, and set an extremely high thr
 
 When the n values are high enough (unfathomably high) it is very difficult to derive p and q from n.
 
-If a hacker is unable to derive p and q values from n values, then they won't be able to decipher our code.
+If a hacker is unable to derive p and q values from n values (i.e. factor the n values), then they won't be able to decipher our code.
