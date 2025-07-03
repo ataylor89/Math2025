@@ -17,3 +17,9 @@ Here are some examples.
 
 % python eval.py expr/2.txt\
 24
+
+% cat expr/3.txt\
+5+(2+3)^3
+
+% python eval.py expr/3.txt\
+130
