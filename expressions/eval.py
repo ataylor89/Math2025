@@ -13,8 +13,17 @@ map = {
 }
 
 def eval(expression):
-    tokens = expression.split()
+    tokens = tokenize(expression)
     return _eval(tokens)
+
+def tokenize(expression):
+    str = ""
+    for c in expression:
+        if c == '(' or c == ')' or c in operators:
+            str += " " + c + " "
+        else:
+            str += c
+    return str.split()
 
 def _eval(tokens):
     n = len(tokens)
