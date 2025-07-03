@@ -23,3 +23,21 @@ Here are some examples.
 
 % python eval.py expr/3.txt\
 130
+
+% cat expr/4.txt\
+2-3+5
+
+% python eval.py expr/4.txt\
+4
+
+% cat expr/5.txt\
+100^(1/2)
+
+% python eval.py expr/5.txt\
+10
+
+% cat expr/6.txt\
+-1 * 2 + -3 + 5
+
+% python eval.py expr/6.txt\
+0
