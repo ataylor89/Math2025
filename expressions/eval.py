@@ -1,80 +1,130 @@
 import sys
 
-error_msg = "Usage: python eval.py expression.txt"
+error_cmdline = "Usage: python eval.py expression.txt"
+error_input = "The expression contains invalid input"
 
+digits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'}
 operators = {'+', '-', '*', '/', '^'}
+parentheses = {'(', ')'}
 
-map = {
-    '+': 0,
-    '-': 0,
-    '*': 1,
-    '/': 1,
-    '^': 2
+precedence = {
+    'addition': 0,
+    'subtraction': 0,
+    'multiplication': 1,
+    'division': 1,
+    'negation': 1,
+    'exponentiation': 2
 }
 
 def eval(expression):
-    tokens = tokenize(expression)
-    return _eval(tokens)
+    try:
+        tokens = tokenize(expression)
+        return _eval(tokens)
+    except ValueError as err:
+        print(err)
 
 def tokenize(expression):
     str = ""
+    expression = expression.strip().replace(" ", "")
     for c in expression:
-        if c == '(' or c == ')' or c in operators:
+        if c in parentheses or c in operators:
             str += " " + c + " "
-        else:
+        elif c in digits or c == '.':
             str += c
+        else:
+            raise ValueError(error_input)
     return str.split()
 
-def _eval(tokens):
+def is_float(s):
+    try:
+        float(s)
+        return True
+    except:
+        return False
+
+def _next(tokens):
     n = len(tokens)
-
-    if n == 1:
-        f = float(tokens[0])
-        return int(f) if f.is_integer() else f
-
     index = 0
-    level = 0
+    operation = None
+    nestedness = 0
     highest_priority = -1
 
     for i in range(0, n):
         token = tokens[i]
-        if token == '(':
-            level += 1
-        elif token== ')':
-            level -= 1
-        elif token in operators:
-            priority = map[token] + 3*level
-            if priority > highest_priority:
-                highest_priority = priority
-                index = i
+        
+        if is_float(token):
+            continue
+        elif token == '(':
+            nestedness += 1
+            continue
+        elif token == ')':
+            nestedness -= 1
+            continue
+        elif token == '+':
+            op = 'addition'
+        elif token == '-':
+            if i == 0 or tokens[i-1] in operators or tokens[i-1] == '(':
+                op = 'negation'
+            else:
+                op = 'subtraction'
+        elif token == '*':
+            op  = 'multiplication'
+        elif token == '/':
+            op = 'division'
+        elif token == '^':
+            op = 'exponentiation'
 
-    op1 = float(tokens[index-1])
-    op2 = float(tokens[index+1])
+        priority = precedence[op] + 3 * nestedness
 
-    match tokens[index]:
-        case '+':
+        if priority > highest_priority:
+            highest_priority = priority
+            index = i
+            operation = op
+
+    return (index, operation)
+            
+def _eval(tokens):
+    if len(tokens) == 1:
+        f = float(tokens[0])
+        return int(f) if f.is_integer() else f
+
+    (index, operation) = _next(tokens)
+
+    if operation == 'negation':
+        op1 = -1 * float(tokens[index+1])
+        tokens[index] = op1
+        
+        del tokens[index+1]
+        if tokens[index-1] == '(' and tokens[index+1] == ')':
+            del tokens[index+1]
+            del tokens[index-1]
+    else:
+        op1 = float(tokens[index-1])
+        op2 = float(tokens[index+1])
+
+        if operation == 'addition':
             op1 = op1 + op2
-        case '-':
+        elif operation == 'subtraction':
             op1 = op1 - op2
-        case '*':
+        elif operation == 'multiplication':
             op1 = op1 * op2
-        case '/':
+        elif operation == 'division':
             op1 = op1 / op2
-        case '^':
+        elif operation == 'exponentiation':
             op1 = op1 ** op2
+        
+        tokens[index-1] = op1 
+        del tokens[index:index+2]
 
-    tokens[index-1] = op1
-    del tokens[index:index+2]
-
-    if tokens[index-2] == '(' and tokens[index] == ')':
-        del tokens[index]
-        del tokens[index-2]
+        if tokens[index-2] == '(' and tokens[index] == ')':
+            del tokens[index]
+            del tokens[index-2]
 
     return _eval(tokens)
 
 def main():
     if len(sys.argv) != 2:
-        print(error_msg)
+        print(error_cmdline)
         sys.exit(0)
 
     file = open(sys.argv[1], "r")
