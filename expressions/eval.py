@@ -18,12 +18,8 @@ def eval(expression):
 
 def tokenize(expression):
     str = ""
-    expression = expression.replace(" ", "")
-    for i in range(0, len(expression)):
-        c = expression[i]
-        if c == '-' and (i == 0 or expression[i-1] in operators):
-            str += c
-        elif c == '(' or c == ')' or c in operators:
+    for c in expression:
+        if c == '(' or c == ')' or c in operators:
             str += " " + c + " "
         else:
             str += c
