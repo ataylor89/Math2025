@@ -19,7 +19,7 @@ precedence = {
 def eval(expression):
     try:
         tokens = tokenize(expression)
-        return _simplify(tokens)
+        return simplify(tokens)
     except ValueError as err:
         print(err)
 
@@ -42,7 +42,7 @@ def is_float(s):
     except:
         return False
 
-def _next(tokens):
+def next(tokens):
     n = len(tokens)
     index = 0
     operation = None
@@ -83,12 +83,12 @@ def _next(tokens):
 
     return (index, operation)
             
-def _simplify(tokens):
+def simplify(tokens):
     if len(tokens) == 1:
         f = float(tokens[0])
         return int(f) if f.is_integer() else f
 
-    (index, operation) = _next(tokens)
+    (index, operation) = next(tokens)
 
     if operation == 'negation':
         op1 = -1 * float(tokens[index+1])
@@ -120,7 +120,7 @@ def _simplify(tokens):
             del tokens[index]
             del tokens[index-2]
 
-    return _simplify(tokens)
+    return simplify(tokens)
 
 def main():
     if len(sys.argv) != 2:
