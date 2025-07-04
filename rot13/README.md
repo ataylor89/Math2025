@@ -60,8 +60,8 @@ Let's write down the algorithm.
     7.3 If the character is non-alphabetic, then substitution = character
     7.4 result += substitution 
 
-    # We have finished encoding (or decoding) the message. Now we return the result
-    8. return result
+    # We have finished encoding (or decoding) the message. Now we print the result
+    8. print result
 
 ## Usage
 
