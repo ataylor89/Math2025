@@ -7,11 +7,11 @@ for i in range(0, 26):
     table[chr(ord('A') + i)] = chr(ord('A') + (i + 13) % 26)
 
 def rot13(message):
-    cipher = ""
+    result = ""
     for letter in message:
         substitution = table[letter] if letter in table else letter
-        cipher += substitution
-    return cipher
+        result += substitution
+    return result
 
 def main():
     if len(sys.argv) != 2:
