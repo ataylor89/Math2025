@@ -21,8 +21,8 @@ def main():
     file = open(sys.argv[1], "r")
     message = file.read()
 
-    cipher = rot13(message)
-    print(cipher, end='')
+    result = rot13(message)
+    print(result, end='')
 
 if __name__ == "__main__":
     main()
