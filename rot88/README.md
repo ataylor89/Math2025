@@ -168,7 +168,7 @@ The line "text = file.read()" actually does all the decoding behind the scenes.
 
 It uses the Unicode character decoding system to decode a file as text.
 
-By default, the built-in open function using Unicode as the encoding system. (It specifically uses UTF-8.)
+By default, the built-in open function uses Unicode as the decoding system. (It specifically uses UTF-8.)
 
 We can actually specify the encoding when we open a file.
 
