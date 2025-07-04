@@ -17,7 +17,7 @@ In order to make this clear, let's give an example using the interactive Python 
     [97, 110, 100, 114, 101, 119]
 
     # Encode my name as a list of Unicode code points, in hexadecimal
-    >>> [hex(x) for x in list('andrew'.encode('utf-8'))]
+    >>> [hex(x) for x in 'andrew'.encode('utf-8')]
     ['0x61', '0x6e', '0x64', '0x72', '0x65', '0x77']
 
     # Encode my name as a string of Unicode code points, in hexadecimal
