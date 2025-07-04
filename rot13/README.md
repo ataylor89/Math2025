@@ -36,32 +36,32 @@ Let's write down the algorithm.
 
 rot13 algorithm
 
-\# In steps 1 through 5 we define our variables and functions
-1. Let result = ""
-2. Let message be the message we want to encrypt or decrypt
-3. Let table be a map
-4. Let ord(x) be a function that returns the Unicode code point for a character x
-5. Let chr(x) be a function that returns the Unicode character for a code point x
+    \# In steps 1 through 5 we define our variables and functions
+    1. Let result = ""
+    2. Let message be the message we want to encrypt or decrypt
+    3. Let table be a map
+    4. Let ord(x) be a function that returns the Unicode code point for a character x
+    5. Let chr(x) be a function that returns the Unicode character for a code point x
 
-\# In step 6 we generate a lookup table
-6. For i = 0, i < 26, i++
-6.1 Let j = (i + 13) mod 26
-6.2 Let letter = chr(ord('a') + i)
-6.3 Let substitution = chr(ord('a') + j)
-6.4 table[letter] = substutition
-6.5 Let letter = chr(ord('A') + i)
-6.6 Let substitution = chr(ord('A') + j)
-6.7 table[letter] = substitution
+    \# In step 6 we generate a lookup table
+    6. For i = 0, i < 26, i++
+    6.1 Let j = (i + 13) mod 26
+    6.2 Let letter = chr(ord('a') + i)
+    6.3 Let substitution = chr(ord('a') + j)
+    6.4 table[letter] = substutition
+    6.5 Let letter = chr(ord('A') + i)
+    6.6 Let substitution = chr(ord('A') + j)
+    6.7 table[letter] = substitution
 
-\# In step 7 we encrypt the message (or alternately we decrypt it, since rot13 is its own inverse)
-7. For each character in message
-7.1 Let substitution = ""
-7.2 If the character is alphabetic, then substitution = table[character]
-7.3 If the character is non-alphabetic, then substitution = character
-7.4 result += substitution 
+    \# In step 7 we encrypt the message (or alternately we decrypt it, since rot13 is its own inverse)
+    7. For each character in message
+    7.1 Let substitution = ""
+    7.2 If the character is alphabetic, then substitution = table[character]
+    7.3 If the character is non-alphabetic, then substitution = character
+    7.4 result += substitution 
 
-\# We have finished encoding (or decoding) the message. Now we return the result
-8. return result
+    \# We have finished encoding (or decoding) the message. Now we return the result
+    8. return result
 
 ## Usage
 
