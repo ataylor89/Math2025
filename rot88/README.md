@@ -94,6 +94,6 @@ Mandarin can be encoded with Unicode.
 
 Hebrew can be encoded with Unicode.
 
-Arabic can be unicode with Unicode.
+Arabic can be encoded with Unicode.
 
 Unicode is the universal charset, the universal character encoding system.
