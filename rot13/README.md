@@ -67,17 +67,17 @@ Let's write down the algorithm.
 
 Now that we have finished describing the algorithm, let's give some example uses.
 
-\# First we encode the message contained within message.txt
-% python rot13.py message.txt
-uryyb jbeyq!
-guvf vf naqerj
-vg'f sevqnl, vg'f whyl 4, naq v'z cynaavat gb jngpu gi gbqnl
+    # First we encode the message contained within message.txt
+    % python rot13.py message.txt
+    uryyb jbeyq!
+    guvf vf naqerj
+    vg'f sevqnl, vg'f whyl 4, naq v'z cynaavat gb jngpu gi gbqnl
 
-\# This time we write the cipher to a file
-% python rot13.py message.txt > cipher.txt
+    # This time we write the cipher to a file
+    % python rot13.py message.txt > cipher.txt
 
-\# Now we decode the cipher
-% python rot13.py cipher.txt
-hello world!
-this is andrew
-it's friday, it's july 4, and i'm planning to watch tv today
+    # Now we decode the cipher
+    % python rot13.py cipher.txt
+    hello world!
+    this is andrew
+    it's friday, it's july 4, and i'm planning to watch tv today
