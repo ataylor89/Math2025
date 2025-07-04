@@ -286,15 +286,15 @@ The default character encoding for MacOS files is UTF-8.
 
 The default character encoding for HTML5 files is UTF-8.
 
-In an HTML file, you can write <meta charset="utf-8">. It's not needed, since utf-8 is the default charset for HTML5. But you can still write it anyway, to show that you know about charsets.
+In an HTML file, you can write `<meta charset="utf-8">`. It's not needed, since utf-8 is the default charset for HTML5. But you can still write it anyway, to show that you know about charsets.
 
-In an HTML file, if you write <meta charset="ascii">, then your browser won't be able to render the character π.
+In an HTML file, if you write `<meta charset="ascii">`, then your browser won't be able to render the character π.
 
 Try writing an HTML file with the letter π in the body.
 
-If you include <meta charset="ascii"> in the header, then your browser won't be able to render π, since it's not included in the ASCII charset.
+If you include `<meta charset="ascii">` in the header, then your browser won't be able to render π, since it's not included in the ASCII charset.
 
-If you include <meta charset="utf-8"> in the header, or you omit a meta/charset tag, then your browser should be able to render π just fine.
+If you include `<meta charset="utf-8">` in the header, or you omit a meta/charset tag, then your browser should be able to render π just fine.
 
 It's important to know that... π is both a character and a glyph.
 
