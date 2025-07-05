@@ -429,7 +429,7 @@ In this document, we covered many subjects, including
 7. The character π is included in Unicode, but it's not included in ASCII, which is one of many reasons we need Unicode
 8. A lot of important characters, like the subscript ₂ and the superscript ², are missing from the ASCII charset. We need the subscript ₂ to write H₂0, and we need the superscript ² to write A = πr²
 9. rot88 is a symmetric cipher, and an involution, just like rot13
-10. If we apply rot88 twice to a message, we get the original message. If we apply rot13 twice to a message, we get the original message. rot88 and rot13 are two examples of symmetric rotation ciphers.
+10. If we apply rot88 twice to a message, we get the original message. If we apply rot13 twice to a message, we get the original message.
 
 I would like to keep the summary to ten points, since ten is a nice number.
 
