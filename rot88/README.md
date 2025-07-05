@@ -428,7 +428,7 @@ In this document, we covered many subjects, including
 6. UTF-8 is a variable-width encoding (it uses 1, 2, 3 or 4 bytes to store each character, depending on how many bytes are needed) whereas UTF-32 is a fixed-width encoding (it always uses 4 bytes to store each character) 
 7. The character π is included in Unicode, but it's not included in ASCII, which is one of many reasons we need Unicode
 8. A lot of important characters, like the subscript ₂ and the superscript ², are missing from the ASCII charset. We need the subscript ₂ to write H₂0, and we need the superscript ² to write A = πr²
-9. rot88 is a symmetric rotation cipher, and also an involution, just like rot13
+9. rot88 is a symmetric rotation cipher, just like rot13
 10. If we apply rot88 twice to a message, we get the original message. If we apply rot13 twice to a message, we get the original message.
 
 I would like to keep the summary to ten points, since ten is a nice number.
