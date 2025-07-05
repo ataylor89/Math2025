@@ -27,7 +27,7 @@ def transform(filename, A):
 
     print('Image size: %dx%d' %(w, h))
 
-    X = (np.array([-w/2, h/2]), np.array([-w/2, -h/2]), np.array([w/2, h/2]), np.array([w/2, -h/2]))
+    X = (np.array((-w/2, h/2)), np.array((-w/2, -h/2)), np.array((w/2, h/2)), np.array((w/2, -h/2)))
     X = np.column_stack(X)
 
     Y = A @ X
@@ -40,7 +40,7 @@ def transform(filename, A):
     X = []
     for x in range(w):
         for y in range(h):
-            coordinates = [x + 0.5 - w/2, h/2 - (y + 0.5)]
+            coordinates = (x + 0.5 - w/2, h/2 - (y + 0.5))
             X.append(np.array(coordinates))
     X = np.column_stack(X)
 
