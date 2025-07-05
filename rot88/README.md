@@ -311,3 +311,160 @@ A character is kind of like an abstract thing. A glyph is an image that represen
 π is also a glyph (an image or a picture) that you see on your computer screen when you read this document.
 
 Ultimately, the code point 0x03c0 gets rendered as a glyph, and the glyph is π.
+
+## What is rot88?
+
+rot88 is a rotation cipher, just like rot13.
+
+rot88 means "rotate 0x88000 places".
+
+The hexadecimal number 0x88000 is actually 557,056 in decimal.
+
+You might ask, "where do we get the number 0x88000?"
+
+Well, the size of the Unicode code space is 0x110000 code points, or 1,114,112 code points.
+
+In the rot88 algorithm, we rotate a character by 0x88000 places, which is half the size of the codespace.
+
+We can prove, mathematically, that rot88 is its own inverse.
+
+Below is a proof.
+
+    Let rot88 be an integer-valued function, on the domain [0, 0x110000), defined as:    
+    rot88(x) = (x + 0x88000) % 0x110000
+
+    We will now show that rot88(rot88(x)) = x
+
+    rot88(rot88(x)) = (rot88(x) + 0x88000) % 0x110000
+
+                    # mod distributes over addition, so long as you mod the result
+                    = (rot88(x) % 0x110000 + 0x88000 % 0x110000) % 0x110000
+
+                    # here we substitute (x + 0x88000) % 0x110000 for rot88(x)
+                    = ((x + 0x88000) % 0x110000 + 0x88000 % 0x110000) % 0x110000
+
+                    # here we use the property that a mod n + b mod n = (a + b) mod n
+                    = ((x + 0x88000 + 0x88000) % 0x110000) % 0x110000
+    
+                    # we are able to get rid of one modulus, since (a % n) % n = a % n
+                    = (x + 0x88000 + 0x88000) % 0x110000
+
+                    # we simplify our sum
+                    = (x + 0x110000) % 0x110000
+
+                    # we know that 0 <= x < n, since x is in the domain of rot88
+                    = x
+
+We find that rot88 is its own inverse, just like rot13
+
+rot88 is a symmetric cipher, which means, it uses the same key for encryption and decryption, and applying it twice returns the original message
+
+rot13 is also a symmetric cipher
+
+When we apply rot88 (or rot13) to plaintext, we transform it into ciphertext
+
+When we apply rot88 (or rot13) to ciphertext, we transform it back to plaintext
+
+I wanted to quickly cover these words, plaintext and ciphertext
+
+In the field of cryptography we use the words "message" and "cipher"
+
+We also use the words "plaintext" and "ciphertext"
+
+Plaintext means unencrypted information
+
+Ciphertext means encrypted information
+
+We can say that rot88(rot88(plaintext)) = plaintext and rot13(rot13(plaintext)) = plaintext, because both of these algorithms are symmetric ciphers, and both of these functions are involutions
+
+## The algorithm
+
+Let's quickly write down the algorithm for rot88. (An algorithm is a list of instructions.)
+
+    # rot88 algorithm
+
+    # In steps 1 through 4, we define our variables and functions
+    1. Let result = ""
+    2. Let message be the message that we want to cipher or decipher
+    3. Let ord(x) be a function that returns a Unicode code point for a character x
+    4. Let chr(x) be a function that returns a Unicode character for a code point x
+
+    # In step 5, we apply the cipher to each character in our message
+    5. For each character in message
+    5.1 Let code = ord(character)
+    5.2 Let newcode = (code + 0x88000) mod 0x110000
+    5.3 Let substutition = chr(newcode)
+    5.4 result += substitution
+
+    # We have finished applying the cipher. Now we print the result
+    6. print result
+
+I think we have reached the end of this document.
+
+It's a long document, but I had a lot of fun writing it.
+
+We covered a lot of subjects... let's quickly give a summary.
+
+## Summary
+
+In this document, we covered many subjects, including
+
+1. What is character encoding?
+
+- Character encoding means turning characters into code.
+
+- When we encode a string, we convert text to numeric data.
+
+- When we decode a text file, we convert numeric data to text.
+
+- Whenever we open a web page, the browser has to decode numeric data into text.
+
+- Whenever we open a text file, the application has to decode numeric data into text.
+
+2. What is Unicode?
+
+- Unicode is a character encoding system, or a character encoding standard.
+
+- Unicode is the biggest charset, the most popular charset, and the most common charset.
+
+- Unicode has 0x110000 = 1,114,112 code points
+
+- ASCII is a subset of Unicode (ASCII is the first 128 characters in Unicode)
+
+- UTF-8 is the default character encoding for MacOS files and HTML5 files
+
+- Unicode is so big that it supports most (or even all) world languages
+
+3. On MacOS, we can see a file's charset by typing the command `file -I <filepath>`
+
+4. On MacOS, we can see a file's binary data by typing the command `hexdump -C <filepath>`
+
+5. UTF-8 is the most compressed Unicode format, and UTF-32 is the least compressed Unicode format
+
+6. UTF-8 is a variable-width encoding (it uses 1, 2, 3 or 4 bytes to store each character, depending on how many bytes are needed) whereas UTF-32 is a fixed-width encoding (it always uses 4 bytes to store each character) 
+
+7. The character π is included in the Unicode charset, but it's not included in the 7-bit ASCII charset, which is one of many reasons why we need Unicode
+
+8. A lot of important characters, like the subscript ₂ and the superscript ², are missing from the ASCII charset. We need the subscript ₂ to write H₂0, and we need the superscript ² to write A = πr²
+
+9. rot88 is a symmetric cipher, and an involution, just like rot13
+
+10. If we apply rot88 twice to a message, we get the original message. If we apply rot13 twice to a message, we get the original message. rot88 and rot13 are two examples of symmetric rotation ciphers.
+
+I would like to keep the summary to ten points, since ten is a nice number.
+
+I hope that helps summarize this document.
+
+It's a long document, but I had a lot of fun writing it.
+
+If you want to skip to the highlights, you can start by reading this summary.
+
+If you want to condense the summary even more, you can start with the three questions that we asked.
+
+1. What is character encoding?
+2. What is Unicode?
+3. What is rot88?
+
+I think that these three questions are a good way of organizing the information in this document.
+
+The document aims to answer these three questions.
