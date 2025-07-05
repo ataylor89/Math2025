@@ -54,8 +54,8 @@ def transform(filename, A):
     return newimg
 
 def matrix_to_cartesian(i, j, n, m):
-    x = j + 0.5 - m/2
-    y = n/2 - (i + 0.5)
+    x = j - (m-1)/2
+    y = (n-1)/2 - i
     return (x, y)
 
 def cartesian_to_matrix(x, y, w, h):
