@@ -30,8 +30,7 @@ def transform(filename, A):
     X = (np.array((-w/2, h/2)), np.array((-w/2, -h/2)), np.array((w/2, h/2)), np.array((w/2, -h/2)))
     X = np.column_stack(X)
     Y = A @ X
-    W = int(max(Y[0]) - min(Y[0]))
-    H = int(max(Y[1]) - min(Y[1]))
+    W, H = int(max(Y[0]) - min(Y[0])), int(max(Y[1]) - min(Y[1]))
 
     print('New image size: %dx%d' %(W, H))
 
