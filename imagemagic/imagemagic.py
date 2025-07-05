@@ -24,7 +24,7 @@ def transform(filename, A):
         img = img.convert("RGBA")
 
     w, h = img.size
-    W, H = get_new_dimensions(w, h, A)
+    W, H = get_new_size(w, h, A)
 
     X = []
     for x in range(w):
@@ -56,7 +56,7 @@ def cartesian_to_matrix(x, y, w, h):
     j = int(w/2 + x)
     return (i, j)
 
-def get_new_dimensions(w, h, A):
+def get_new_size(w, h, A):
     corners = ((-(w-1)/2, (h-1)/2), (-(w-1)/2, -(h-1)/2), ((w-1)/2, -(h-1)/2), ((w-1)/2, (h-1)/2))
     X = np.column_stack([np.array(corner) for corner in corners])
     Y = A @ X
