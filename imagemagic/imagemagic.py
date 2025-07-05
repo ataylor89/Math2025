@@ -60,4 +60,4 @@ def get_new_size(w, h, A):
     corners = ((-(w-1)/2, (h-1)/2), (-(w-1)/2, -(h-1)/2), ((w-1)/2, -(h-1)/2), ((w-1)/2, (h-1)/2))
     X = np.column_stack([np.array(corner) for corner in corners])
     Y = A @ X
-    return (int(max(Y[0]) - min(Y[0])) + 1, int(max(Y[1]) - min(Y[1])) + 1)
+    return (int(max(Y[0]) - min(Y[0]) + 1), int(max(Y[1]) - min(Y[1]) + 1))
