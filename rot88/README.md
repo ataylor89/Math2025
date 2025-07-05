@@ -410,45 +410,25 @@ We covered a lot of subjects... let's quickly give a summary.
 In this document, we covered many subjects, including
 
 1. What is character encoding?
-
 - Character encoding means turning characters into code.
-
 - When we encode a string, we convert text to numeric data.
-
 - When we decode a text file, we convert numeric data to text.
-
 - Whenever we open a web page, the browser has to decode numeric data into text.
-
 - Whenever we open a text file, the application has to decode numeric data into text.
-
 2. What is Unicode?
-
 - Unicode is a character encoding system, or a character encoding standard.
-
 - Unicode is the biggest charset, the most popular charset, and the most common charset.
-
 - Unicode has 0x110000 = 1,114,112 code points
-
 - ASCII is a subset of Unicode (ASCII is the first 128 characters in Unicode)
-
 - UTF-8 is the default character encoding for MacOS files and HTML5 files
-
 - Unicode is so big that it supports most (or even all) world languages
-
 3. On MacOS, we can see a file's charset by typing the command `file -I <filepath>`
-
 4. On MacOS, we can see a file's binary data by typing the command `hexdump -C <filepath>`
-
 5. UTF-8 is the most compressed Unicode format, and UTF-32 is the least compressed Unicode format
-
 6. UTF-8 is a variable-width encoding (it uses 1, 2, 3 or 4 bytes to store each character, depending on how many bytes are needed) whereas UTF-32 is a fixed-width encoding (it always uses 4 bytes to store each character) 
-
 7. The character π is included in the Unicode charset, but it's not included in the 7-bit ASCII charset, which is one of many reasons why we need Unicode
-
 8. A lot of important characters, like the subscript ₂ and the superscript ², are missing from the ASCII charset. We need the subscript ₂ to write H₂0, and we need the superscript ² to write A = πr²
-
 9. rot88 is a symmetric cipher, and an involution, just like rot13
-
 10. If we apply rot88 twice to a message, we get the original message. If we apply rot13 twice to a message, we get the original message. rot88 and rot13 are two examples of symmetric rotation ciphers.
 
 I would like to keep the summary to ten points, since ten is a nice number.
