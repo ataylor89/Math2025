@@ -420,7 +420,7 @@ In this document, we covered many subjects, including
     - Unicode is a very big charset, and it's also the most popular and the most common
     - Unicode has 0x110000 = 1,114,112 code points
     - ASCII is a subset of Unicode (ASCII is the first 128 characters in Unicode)
-    - UTF-8 is the default character encoding for MacOS files and HTML5 files
+    - UTF-8 is the default charset for MacOS files and HTML5 files
     - Unicode is so big that it supports most (or even all) world languages
 3. On MacOS, we can see a file's charset by typing the command `file -I <filepath>`
 4. On MacOS, we can see a file's binary data by typing the command `hexdump -C <filepath>`
