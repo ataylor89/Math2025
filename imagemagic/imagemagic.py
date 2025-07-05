@@ -27,9 +27,10 @@ def transform(filename, A):
 
     print('Image size: %dx%d' %(w, h))
 
-    X = np.column_stack((np.array((-w/2, h/2)), np.array((-w/2, -h/2)), np.array((w/2, h/2)), np.array((w/2, -h/2))))
+    corners = ((-(w-1)/2, (h-1)/2), (-(w-1)/2, -(h-1)/2), ((w-1)/2, -(h-1)/2), ((w-1)/2, (h-1)/2))
+    X = np.column_stack([np.array(corner) for corner in corners])
     Y = A @ X
-    W, H = int(max(Y[0]) - min(Y[0])), int(max(Y[1]) - min(Y[1]))
+    W, H = int(max(Y[0]) - min(Y[0])) + 1, int(max(Y[1]) - min(Y[1])) + 1
 
     print('New image size: %dx%d' %(W, H))
 
