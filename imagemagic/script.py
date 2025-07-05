@@ -2,8 +2,8 @@ import imagemagic
 import matplotlib.pyplot as plt
 import math
 
-INPUT_FILE = 'images/pawn/pawn.png'
-OUTPUT_FILE = 'images/pawn/transformations/rotate90.png'
+input_file = 'images/pawn/pawn.png'
+output_file = 'images/pawn/transformations/rotate90.png'
 
 # The DPI for my computer is 72 dots per inch.
 #
@@ -19,13 +19,13 @@ OUTPUT_FILE = 'images/pawn/transformations/rotate90.png'
 # DPI means dots per inch and also pixels per inch. The two meanings are equivalent.
 #
 # I hope that explains all this DPI business. It's a way of converting between pixels and inches.
-DPI = 72
+DPI = plt.rcParams["figure.dpi"]
 
-img = imagemagic.rotate(INPUT_FILE, math.pi/2)
+img = imagemagic.rotate(input_file, math.pi/2)
 width = len(img[0])
 height = len(img)
 
 plt.figure(figsize=(width/DPI, height/DPI), dpi=DPI)
 plt.axis("off")
 plt.imshow(img)
-plt.savefig(OUTPUT_FILE, transparent=True)
+plt.savefig(output_file, transparent=True)
