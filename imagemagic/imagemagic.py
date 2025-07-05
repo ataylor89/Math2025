@@ -24,7 +24,10 @@ def transform(filename, A):
         img = img.convert("RGBA")
 
     w, h = img.size
+    print("Image size: %dx%d" %(w, h))
+
     W, H = get_new_size(w, h, A)
+    print("New image size: %dx%d" %(W, H))
 
     X = []
     for x in range(w):

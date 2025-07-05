@@ -3,7 +3,6 @@ import imagemagic
 import math
 
 input_file = 'images/usflag/usflag.png'
-#output_file = 'images/usflag/transformations/reflecty.png'
 output_file = 'images/usflag/transformations/rotate90.png'
 
 #input_file = 'images/pawn/pawn.png'
