@@ -352,7 +352,10 @@ Below is a proof.
                     # we simplify our sum
                     = (x + 0x110000) % 0x110000
 
-                    # we know that 0 <= x < n, since x is in the domain of rot88
+                    # here we use the property that (a + n) mod n = a mod n
+                    = x % 0x110000
+
+                    # here we use the property that a mod n = a if 0 <= a < n
                     = x
 
 We find that rot88 is its own inverse, just like rot13
