@@ -416,8 +416,8 @@ In this document, we covered many subjects, including
     - When we open a web page, the browser has to decode numeric data into text.
     - When we open a text file, the application has to decode numeric data into text.
 2. What is Unicode?
-    - Unicode is a character encoding system, or a character encoding standard.
-    - Unicode is the biggest charset, the most popular charset, and the most common charset.
+    - Unicode is a character encoding system, or a character encoding standard
+    - Unicode is a very big charset, and it's also the most popular and the most common
     - Unicode has 0x110000 = 1,114,112 code points
     - ASCII is a subset of Unicode (ASCII is the first 128 characters in Unicode)
     - UTF-8 is the default character encoding for MacOS files and HTML5 files
