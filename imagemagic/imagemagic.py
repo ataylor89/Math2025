@@ -42,7 +42,7 @@ def transform(filename, A):
     Y = A @ X
 
     newimg = Image.new(img.mode, (W, H), (0, 0, 0, 0))
-    numpixels = W * H
+    numpixels = w * h
 
     for i in range(numpixels):
         (row, col) = cartesian_to_matrix(X[0][i], X[1][i], w, h)
