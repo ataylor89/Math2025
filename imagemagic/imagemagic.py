@@ -23,12 +23,8 @@ def transform(filename, A):
     if img.mode not in ("RGB", "RGBA"):
         img = img.convert("RGBA")
 
-    (w, h) = img.size
-
-    corners = ((-(w-1)/2, (h-1)/2), (-(w-1)/2, -(h-1)/2), ((w-1)/2, -(h-1)/2), ((w-1)/2, (h-1)/2))
-    X = np.column_stack([np.array(corner) for corner in corners])
-    Y = A @ X
-    W, H = int(max(Y[0]) - min(Y[0])) + 1, int(max(Y[1]) - min(Y[1])) + 1
+    w, h = img.size
+    W, H = get_new_dimensions(w, h, A)
 
     X = []
     for x in range(w):
@@ -59,3 +55,9 @@ def cartesian_to_matrix(x, y, w, h):
     i = int(h/2 - y)
     j = int(w/2 + x)
     return (i, j)
+
+def get_new_dimensions(w, h, A):
+    corners = ((-(w-1)/2, (h-1)/2), (-(w-1)/2, -(h-1)/2), ((w-1)/2, -(h-1)/2), ((w-1)/2, (h-1)/2))
+    X = np.column_stack([np.array(corner) for corner in corners])
+    Y = A @ X
+    return (int(max(Y[0]) - min(Y[0])) + 1, int(max(Y[1]) - min(Y[1])) + 1)
