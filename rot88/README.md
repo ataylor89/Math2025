@@ -413,8 +413,8 @@ In this document, we covered many subjects, including
     - Character encoding means turning characters into code.
     - When we encode a string, we convert text to numeric data.
     - When we decode a text file, we convert numeric data to text.
-    - Whenever we open a web page, the browser has to decode numeric data into text.
-    - Whenever we open a text file, the application has to decode numeric data into text.
+    - When we open a web page, the browser has to decode numeric data into text.
+    - When we open a text file, the application has to decode numeric data into text.
 2. What is Unicode?
     - Unicode is a character encoding system, or a character encoding standard.
     - Unicode is the biggest charset, the most popular charset, and the most common charset.
