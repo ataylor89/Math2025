@@ -426,7 +426,7 @@ In this document, we covered many subjects, including
 4. On MacOS, we can see a file's binary data by typing the command `hexdump -C <filepath>`
 5. UTF-8 is the most compressed Unicode format, and UTF-32 is the least compressed Unicode format
 6. UTF-8 is a variable-width encoding (it uses 1, 2, 3 or 4 bytes to store each character, depending on how many bytes are needed) whereas UTF-32 is a fixed-width encoding (it always uses 4 bytes to store each character) 
-7. The character π is included in Unicode, but it's not included in ASCII, which is one of many reasons why we need Unicode
+7. The character π is included in Unicode, but it's not included in ASCII, which is one of many reasons we need Unicode
 8. A lot of important characters, like the subscript ₂ and the superscript ², are missing from the ASCII charset. We need the subscript ₂ to write H₂0, and we need the superscript ² to write A = πr²
 9. rot88 is a symmetric cipher, and an involution, just like rot13
 10. If we apply rot88 twice to a message, we get the original message. If we apply rot13 twice to a message, we get the original message. rot88 and rot13 are two examples of symmetric rotation ciphers.
