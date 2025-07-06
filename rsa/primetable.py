@@ -41,7 +41,6 @@ def generate(n):
         s = sieve(n, size)
     
     table = [i for i, j in enumerate(s) if j == 'P'][0:n]
-
     flags['existing_table_sufficient'] = False
 
 def sieve(n, size):
