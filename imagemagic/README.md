@@ -180,7 +180,7 @@ If we want to record more, we can use the hexadecimal system.
 
 With four digits, we can record 10,000 numbers, using the base ten system.
 
-With four digits, we can record 65535 numbers, using the hexadecimal system.
+With four digits, we can record 65536 numbers, using the hexadecimal system.
 
 The hexadecimal system is very useful for computers because binary data is stored as bits... literally it is stored in memory cells as "high voltage" or "low voltage", which is a binary value.
 
