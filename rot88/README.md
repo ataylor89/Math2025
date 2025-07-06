@@ -337,10 +337,13 @@ Below is a proof.
 
     rot88(rot88(x)) = (rot88(x) + 0x88000) % 0x110000
 
-                    # mod distributes over addition, so long as you mod the result
-                    = (rot88(x) % 0x110000 + 0x88000 % 0x110000) % 0x110000
+                    # we substitute (x + 0x88000) % 0x110000 for rot88(x)
+                    = ((x + 0x88000) % 0x110000 + 0x88000) % 0x110000
 
-                    # here we substitute (x + 0x88000) % 0x110000 for rot88(x)
+                    # mod distributes over addition, so long as we mod the result
+                    = ((x + 0x88000) % 0x110000 % 0x110000 + 0x88000 % 0x110000) % 0x110000
+
+                    # since (a % n) % n = a % n, we can get rid of one modulus
                     = ((x + 0x88000) % 0x110000 + 0x88000 % 0x110000) % 0x110000
 
                     # here we use the property that a mod n + b mod n = (a + b) mod n
