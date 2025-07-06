@@ -39,6 +39,6 @@ We can run primetable.py and keytable.py on AWS cloud, and generate a keytable w
 
 Cloud computing is a really good solution to difficult computational problems.
 
-AWS cloud is kind of like NetFlix. We can easily turn on NetFlix and start watching a TV show.
+AWS cloud is kind of like Netflix. We can easily turn on Netflix and start watching a TV show.
 
 With AWS cloud, we can easily rent an EC2 instance, or a cluster of EC2 instances, and use them to run a program that requires a lot of CPU and memory.
