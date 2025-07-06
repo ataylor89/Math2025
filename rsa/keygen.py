@@ -7,7 +7,7 @@ error_missing_table = "The key table does not exist"
 error_keylen = "The key length exceeds the number of n values in the key table"
 
 def gen_keys(key_len=4):
-    if not validate(key_len):
+    if not valid(key_len):
         return None
 
     nvalues = list(keytable.table['table'].keys())
@@ -18,7 +18,7 @@ def gen_keys(key_len=4):
         keys.append((n, e, d))
     return keys
 
-def validate(key_len):
+def valid(key_len):
     num_nvalues = len(keytable.table['table'].keys())
     return key_len <= num_nvalues
 
@@ -36,7 +36,7 @@ def main():
         print(error_missing_table)
         sys.exit(0)
 
-    if not validate(key_len):
+    if not valid(key_len):
         print(error_keylen)
         sys.exit(0)
 
