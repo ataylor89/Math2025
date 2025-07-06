@@ -2,64 +2,58 @@ import pickle
 import sys
 import os
 
-error_msg = "Usage: python primetable.py <n>"
-already_exists = False
-already_exists_msg = "Existing table is sufficient"
+flags = {'existing_table_sufficient': False}
 
-# Gets the nth prime from the prime table
+error_msg = "Usage: python primetable.py <n>"
+existing_table_sufficient = "Existing table is sufficient"
+
 def get(n):
     return table[n-1]
 
-# Gets the size of our prime table
 def size():
     return len(table)
 
-# Loads a prime table from a file
-def load(path):
+def load(path='primetable.pickle'):
     global table
 
     if os.path.exists(path):
         file = open(path, "rb")
         table = pickle.load(file)
 
-# Saves the prime table to a file
-def save(path):
-    if table and not already_exists:
+def save(path='primetable.pickle'):
+    global table
+
+    if table and not flags['existing_table_sufficient']:
         file = open(path, "wb")
         pickle.dump(table, file)
 
-# Generates a prime table of size n
 def generate(n):
     global table
-    global already_exists
 
-    if os.path.exists("primetable.pickle"):
-        load("primetable.pickle")
-        if len(table) >= n:
-            already_exists = True
-            return
+    if load('primetable.pickle') and len(table) >= n:
+        flags['existing_table_sufficient'] = True
+        return
 
     size = 100 * n
-    s = _sieve(n, size)
+    s = sieve(n, size)
     while s.count('P') < n:
         size *= 100
-        s = _sieve(n, size)
+        s = sieve(n, size)
     table = [i for i, j in enumerate(s) if j == 'P'][0:n]
 
-    already_exists = False
+    flags['existing_table_sufficient'] = False
 
-# Helper function used to create our prime table
-def _sieve(n, size):
-    sieve = ['P'] * size
-    sieve[0] = 'N'
-    sieve[1] = 'N'
+def sieve(n, size):
+    arr = ['P'] * size
+    arr[0] = 'N'
+    arr[1] = 'N'
     for i in range(2, size):
-        if sieve[i] == 'P':
+        if arr[i] == 'P':
             j = 2
             while i * j < size:
-                sieve[i * j] = 'C'
+                arr[i * j] = 'C'
                 j += 1
-    return sieve
+    return arr
 
 def main():
     if len(sys.argv) != 2:    
@@ -78,8 +72,8 @@ def main():
  
     generate(n)
 
-    if already_exists:
-        print(already_exists_msg)
+    if flags['existing_table_sufficient']:
+        print(existing_table_sufficient)
     else:
         save("primetable.pickle")
 
