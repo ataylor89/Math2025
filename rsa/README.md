@@ -19,14 +19,32 @@ To test the encryption algorithm, you can type the following commands:
     % python decrypt.py cipher.txt
 
 ## Security
-In order to make the algorithm secure, we need to choose unfathomably large n values.
+In order to make the algorithm secure, we need to set a very high threshold for p and q.
 
-This is a difficult computation problem.
+Let n = p * q.
 
-What we can do is this...
+If we set a high enough threshold for p and q, then the product n will be very difficult to factor.
 
-We can run keytable.py on AWS cloud, in a cluster, and set an extremely high threshold. This will result in extremely high n values. Then we can download the key table and use it to create key pairs.
+For example, if p and q are both greater than one trillion, the resulting n value might be difficult to factor.
 
-When the n values are high enough (unfathomably high) it is very difficult to derive p and q from n.
+It actually takes a lot of compute time, a lot of memory, a lot of disk space, and a lot of processing power to factor very large numbers, e.g. numbers greater than 10^100.
 
-If a hacker is unable to derive p and q values from n values (i.e. factor the n values), then they won't be able to decipher our code.
+Practically speaking, it's hard to create a prime table that big. But we can create a really big prime table, and the bigger our prime table, the higher our threshold, the more secure our algorithm is.
+
+## The cloud solution
+
+Another thing we can do is this.
+
+We can run primetable.py and keytable.py on AWS cloud, and generate a keytable with an extremely high threshold. Then we can download this keytable, run keygen.py, and create a key pair that is very secure.
+
+Cloud computing is a really good solution to difficult computational problems.
+
+AWS cloud is kind of like NetFlix. We can easily turn on NetFlix and start watching a TV show.
+
+With AWS cloud, we can easily rent an EC2 instance, or a cluster of EC2 instances, and use them to run a program that requires a lot of CPU and memory.
+
+It's very difficult for my MacBook to generate a prime table of 100 million primes. Just think about it... a prime table of 100 million primes is a file that exceeds 100 MB in size.
+
+But I can generate a very large prime table on AWS cloud. Then I can generate a key table on AWS cloud. We can create a key table of size 100 with an extremely high threshold.
+
+Then I can download the key table to my MacBook. I can run keygen.py on my MacBook, using the key table that I downloaded from AWS cloud. Using this key table, I can create a highly secure public key and private key.
