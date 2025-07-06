@@ -341,7 +341,7 @@ Below is a proof.
                     = ((x + 0x88000) % 0x110000 + 0x88000) % 0x110000
 
                     # mod distributes over addition, so long as we mod the result
-                    = ((x + 0x88000) % 0x110000 % 0x110000 + 0x88000 % 0x110000) % 0x110000
+                    = (((x + 0x88000) % 0x110000) % 0x110000 + 0x88000 % 0x110000) % 0x110000
 
                     # since (a % n) % n = a % n, we can get rid of one modulus
                     = ((x + 0x88000) % 0x110000 + 0x88000 % 0x110000) % 0x110000
