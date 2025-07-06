@@ -467,7 +467,7 @@ The set {'blue'} is equal to the set {'blue'}.
 
 The set {'blue'} is a subset of the set {'red', 'green', 'blue'}.
 
-These sets are not number per se, but they are mathematical objects.
+These sets are not numbers per se, but they are mathematical objects.
 
 So the word "object" has a place in mathematics.
 
