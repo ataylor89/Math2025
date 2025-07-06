@@ -48,8 +48,7 @@ def generate(s, t):
     ptablesize = primetable.size()
     
     for i in range(1, ptablesize):
-        p = primetable.get(i)
-        if p**2 >= t:
+        if primetable.get(i) >= t:
             kmin = i
             break
 
@@ -87,17 +86,17 @@ def generate(s, t):
     already_exists = False
 
 def test(n, e, d):
-    bytes = list(map(lambda x: ord(x), test_message))
+    codes = list(map(lambda x: ord(x), test_message))
 
     encrypted = []
-    for i in range(0, len(bytes)):
-        encrypted.append(util.power_mod_m(bytes[i], e, n))
+    for i in range(0, len(codes)):
+        encrypted.append(util.power_mod_m(codes[i], e, n))
 
     decrypted = []
-    for i in range(0, len(bytes)):
+    for i in range(0, len(codes)):
         decrypted.append(util.power_mod_m(encrypted[i], d, n))
 
-    return bytes == decrypted
+    return codes == decrypted
 
 def main():
     if len(sys.argv) != 3:
