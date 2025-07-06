@@ -350,7 +350,7 @@ We cannot take the square root of negative three.
 
 We cannot represent the square root of negative three as a real number.
 
-So we define the imaginary number i, we invent the complex number system, we define the rules of complex arithmetic, and we represent sqrt(-3) as i * sqrt(-3).
+So we define the imaginary number i, we invent the complex number system, we define the rules of complex arithmetic, and we represent sqrt(-3) as i * sqrt(3).
 
 Now we can represent the solutions of x^2 + x + 1 = 0 as complex numbers.
 
