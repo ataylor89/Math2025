@@ -3,20 +3,20 @@
 ## Usage
 To test the encryption algorithm, you can type the following commands:
 
-# Generate a prime table of one million primes
-% python primetable.py 1000000
+    # Generate a prime table of one million primes
+    % python primetable.py 1000000
 
-# Generate a key table with 10 keys and a threshold of ten thousand
-% python keytable.py 10 10000
+    # Generate a key table with 10 keys and a threshold of ten thousand
+    % python keytable.py 10 10000
 
-# Generate a key pair
-% python keygen.py
+    # Generate a key pair
+    % python keygen.py
 
-# Encrypt a message using our public key
-% python encrypt.py message.txt
+    # Encrypt a message using our public key
+    % python encrypt.py message.txt
 
-# Decrypt the cipher using our private key
-% python decrypt.py cipher.txt
+    # Decrypt the cipher using our private key
+    % python decrypt.py cipher.txt
 
 ## Security
 In order to make the algorithm secure, we need to choose unfathomably large n values.
