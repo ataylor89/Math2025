@@ -18,6 +18,15 @@ def gen_keys(key_len=4):
         keys.append((n, e, d))
     return keys
 
+def save(keys):
+    with open("publickey.txt", "w") as file:
+        for (n, e, d) in keys:
+            file.write("n=%d e=%d\n" %(n, e))
+
+    with open("privatekey.txt", "w") as file:
+        for (n, e, d) in keys:
+            file.write("n=%d d=%d\n" %(n, d))
+
 def valid(key_len):
     num_nvalues = len(keytable.table['table'].keys())
     return key_len <= num_nvalues
@@ -41,14 +50,7 @@ def main():
         sys.exit(0)
 
     keys = gen_keys(key_len)
-
-    with open("publickey.txt", "w") as file:
-        for (n, e, d) in keys:
-            file.write("n=%d e=%d\n" %(n, e))
+    save(keys)
     
-    with open("privatekey.txt", "w") as file:
-        for (n, e, d) in keys:
-            file.write("n=%d d=%d\n" %(n, d))
-
 if __name__ == "__main__":
     main()
