@@ -13,7 +13,7 @@ already_exists_msg = "The existing table is sufficient"
 test_message = "hello world! my name is andrew"
 
 # Loads a key table from the file path
-def load(path):
+def load(path='keytable.pickle'):
     global table
 
     if os.path.exists(path):
