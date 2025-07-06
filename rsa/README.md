@@ -42,9 +42,3 @@ Cloud computing is a really good solution to difficult computational problems.
 AWS cloud is kind of like NetFlix. We can easily turn on NetFlix and start watching a TV show.
 
 With AWS cloud, we can easily rent an EC2 instance, or a cluster of EC2 instances, and use them to run a program that requires a lot of CPU and memory.
-
-It's very difficult for my MacBook to generate a prime table of 100 million primes. Just think about it... a prime table of 100 million primes is a file that exceeds 100 MB in size.
-
-But I can generate a very large prime table on AWS cloud. Then I can generate a key table on AWS cloud. We can create a key table of size 100 with an extremely high threshold.
-
-Then I can download the key table to my MacBook. I can run keygen.py on my MacBook, using the key table that I downloaded from AWS cloud. Using this key table, I can create a highly secure public key and private key.
