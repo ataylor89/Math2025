@@ -382,7 +382,7 @@ Addition has the + operator. Subtraction has the - operator.
 
 Multiplication has the * operator. Division has the / operator.
 
-Powers has the ^ operator. Roots has the radical operator.
+Powers have the ^ operator. Roots have the radical operator.
 
 Negation has the - operator.
 
