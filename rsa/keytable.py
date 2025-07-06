@@ -19,6 +19,9 @@ def load(path):
     if os.path.exists(path):
         file = open(path, "rb")
         table = pickle.load(file)
+        return True
+
+    return False
 
 # Saves a key table to the file path
 def save(path):
