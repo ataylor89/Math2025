@@ -18,12 +18,12 @@ precedence = {
 
 def eval(expression):
     try:
-        tokens = tokenize(expression)
+        tokens = parse(expression)
         return simplify(tokens)
     except ValueError as err:
         print(err)
 
-def tokenize(expression):
+def parse(expression):
     str = ""
     expression = expression.strip().replace(" ", "")
     for c in expression:
