@@ -1,4 +1,4 @@
-# Expression parsing and expression evaluation
+# Evaluating expressions
 
 ## Usage
 
