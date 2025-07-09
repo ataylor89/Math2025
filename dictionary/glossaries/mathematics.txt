@@ -72,5 +72,8 @@ Secant:
 Tangent:
 (1) A tangent line to the graph of y = f(x) at the point (a, f(a)) is a line that passes through (a, f(a)) but does not intersect the graph at any other point. (Source: Art of Problem Solving)
 
+Trigonometry:
+(1) The study of triangles
+
 Vector:
 (1) A list of numbers
