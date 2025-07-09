@@ -1,0 +1,4 @@
+Parse/parser:
+(1) To break a whole into parts
+(2) To break a word, sentence, or file into parts
+Etymology: The English word "parse" comes from the Latin word "pars, partis", which means "part" or "parts".
