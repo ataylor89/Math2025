@@ -45,6 +45,8 @@ Linear algebra:
 Mathematics:
 (1) The study of mathematical objects, including numbers
 (2) The study of mathematical objects, including numbers and shapes
+(3) A language that consists of numbers, operations, relations, and other mathematical objects
+(4) A language that consists of numbers, shapes, and other mathematical objects
 
 Matrix:
 (1) A rectangular array of numbers
