@@ -40,4 +40,4 @@ Blue light gets scattered so much, on this longer path through the atmosphere, t
 
 What reaches us instead, are the longer wavelengths of visible light, namely, red and orange, because they are scattered much less than the other colors of light, and they are far more concentrated.
 
-Rayleigh scattering, and the resonant frequencies of nitrogen and oxygen, are the two principles that explain why the sky is blue and why the sunset is red.
+Rayleigh scattering, and the resonant frequencies of nitrogen and oxygen, explain why the sky is blue, and they also explain why the sunset is red, because the same principles are at work.
