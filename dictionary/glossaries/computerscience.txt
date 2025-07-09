@@ -1,3 +1,6 @@
+Algorithm:
+(1) A list of instructions
+
 ASCII:
 (1) An acronym meaning American Standard Code for Information Interchange
 (2) A 7-bit character encoding system or character encoding standard
@@ -63,8 +66,15 @@ Etymology: The English word "parse" comes from the Latin word "pars, partis", wh
 Plaintext:
 (1) Unencrypted information, as contrasted with ciphertext
 
+Program:
+(1) One or more threads of execution
+(1) One or more threads executed simultaneously by a processor
+
 Programming language:
 (1) A language that can be compiled or interpreted into machine code.
+
+Thread:
+(1) A single list of executable instructions stored in memory under a start address
 
 Unicode:
 (1) A 32-bit character encoding system (or character encoding standard) which has 0x110000 code points, and is consistent with ASCII for the first 128 characters.
