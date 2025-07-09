@@ -1,4 +1,56 @@
+ASCII:
+(1) An acronym meaning American Standard Code for Information Interchange
+(2) A 7-bit character encoding system or character encoding standard
+
+Binary:
+(1) A number system in base two
+
+Character decoding:
+(1) Converting code points into characters
+(2) Converting numeric data into text
+
+Character encoding:
+(1) Converting characters into code
+(2) Converting text into numeric data
+
+Cipher (noun):
+(1) An encrypted message
+(2) An encryption algorithm
+
+Cipher (verb):
+(1) To encrypt a message
+
+Ciphertext:
+(1) An encrypted message
+(2) Encrypted information
+
+Computer:
+(1) A processor combined with memory and IO devices
+(2) A technology or system that contains a central processing unit (CPU), memory, and IO devices
+
+Decipher (verb):
+(1) To decrypt an encrypted message
+
+Machine code:
+(1) A computer language that is understood by a processor.
+
+Memory:
+(1) An array of memory cells
+
+Memory cell:
+(1) A cell in memory that contains either a high voltage level or a low voltage level, which can be decoded as a 1 or a 0, and represented by a bit
+
 Parse/parser:
 (1) To break a whole into parts
 (2) To break a word, sentence, or file into parts
 Etymology: The English word "parse" comes from the Latin word "pars, partis", which means "part" or "parts".
+
+Plaintext:
+(1) Unencrypted information, as contrasted with ciphertext
+
+Programming language:
+(1) A language that can be compiled or interpreted into machine code.
+
+Unicode:
+(1) A 32-bit character encoding system (or character encoding standard) which has 0x110000 code points, and is consistent with ASCII for the first 128 characters.
+(2) A universal character encoding system that supports every world language or almost every world language.
