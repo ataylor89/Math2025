@@ -4,6 +4,9 @@ Check:
 Checkmate:
 (1) A check that cannot be escaped
 
+Chess notation:
+(1) A language for writing down chess moves and recording a chess game
+
 Combination:
 (1) A tactic that consists of two or more moves
 
