@@ -14,11 +14,10 @@ Endgame:
 (1) The third phase of a chess game, when queens have been traded and queens are no longer on the board
 
 Middlegame:
-(1) The second phase of a chess game, where the players are "out of book"
-(2) The second phase of a chess game, where the moves are no longer known in advance
+(1) The second phase of a chess game, after the players have finished their development
 
 Opening:
-(1) The first phase of a chess game, where the moves are known in advance through memorization or study
+(1) The first phase of a chess game, where both players develop their pieces
 
 Strategy:
 (1) A plan
