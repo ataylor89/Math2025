@@ -67,6 +67,9 @@ Etymology: The English word "parse" comes from the Latin word "pars, partis", wh
 Plaintext:
 (1) Unencrypted information, as contrasted with ciphertext
 
+Processor:
+(1) A chip that executes instructions
+
 Program:
 (1) One or more threads of execution
 (1) One or more threads executed simultaneously by a processor
