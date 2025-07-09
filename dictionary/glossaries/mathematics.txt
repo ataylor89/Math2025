@@ -42,6 +42,10 @@ Limit:
 Linear algebra:
 (1) The study of linear equations
 
+Mathematics:
+(1) The study of mathematical objects, including numbers
+(2) The study of mathematical objects, including numbers and shapes
+
 Matrix:
 (1) A rectangular array of numbers
 
