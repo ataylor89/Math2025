@@ -1,0 +1,5 @@
+It's fun to write a dictionary, so I thought that I would do this, and upload it to Github.
+
+So far I have three glossaries in mind: one for mathematics, one for computer science, one for chess.
+
+I might add more glossaries over time.

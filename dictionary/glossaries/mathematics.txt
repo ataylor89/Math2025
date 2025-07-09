@@ -1,0 +1,67 @@
+Algebra:
+(1) Solving for an unknown
+(2) The art of solving equations
+
+Antiderivative:
+(1) A function F is an antiderivative of a function f if F is differentiable and F' = f
+
+Arithmetic:
+(1) The study of numbers
+
+Calculus:
+(1) Calculating a slope, area, or volume
+
+Derivative:
+(1) The derivative of a function f(x) is a function f'(x) such that...
+
+f'(x) = lim h->0 (f(x + h) - f(x)) / h
+
+at every point x in the domain of f(x) where the limit is defined. (Source: Art of Problem Solving)
+
+Combinatorics:
+(1) The field of mathematics concerned with counting
+
+Definite integral:
+(1) The definite integral of a continuous function f(x) on a closed interval [a, b] is the Riemann sum approximating the area under the curve as the number of rectangles approaches infinity.
+
+Function:
+(1) A rule assigning to every input exactly one output
+
+Fundamental theorem of algebra:
+(1) For any polynomial P(x) of degree n the following two statements are true: P(x) = 0 has exactly n complex solutions, and P(x) can be written as a(x - r1)(x - r2)...(x - rn) where a is the leading coefficient of P(x) and r1, r2, ..., rn is a sequence of n complex numbers, which are called the "roots" of the polynomial.
+
+Fundamental theorem of calculus:
+(1) The definite integral of a continuous function f(x) on the closed interval [a, b] is F(b) - F(a), where F is any antiderivative of f(x).
+
+Geometry:
+(1) The study of shapes
+
+Limit:
+(1) Let f(x) be a real-valued function. The limit of f(x) as x approaches a is L, or lim x->a f(x) = L, if, for all e > 0, there exists a d > 0 such that 0 < |x - a| < d implies |f(x) - L| < e. (Source: Art of Problem Solving)
+
+Linear algebra:
+(1) The study of linear equations
+
+Matrix:
+(1) A rectangular array of numbers
+
+Measurement:
+(1) A number accompanied by a unit of measurement (e.g. 100 yards or 24 hours)
+
+Number theory:
+(1) The study of numbers
+
+Probability:
+(1) The study of chance, probability, or likelihood
+
+Set:
+(1) A collection of objects
+
+Structure:
+(1) A set endowed with operations and relations
+
+Secant:
+(1) A secant line to the graph of y = f(x) is any line that intersects the graph in at least two distinct points. (Source: Art of Problem Solving)
+
+Tangent:
+(1) A tangent line to the graph of y = f(x) at the point (a, f(a)) is a line that passes through (a, f(a)) but does not intersect the graph at any other point. (Source: Art of Problem Solving)
