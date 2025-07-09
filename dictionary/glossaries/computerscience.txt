@@ -34,6 +34,9 @@ Decimal:
 Decipher (verb):
 (1) To decrypt an encrypted message
 
+Digest:
+(1) The digest, or message digest, is the fixed-length output of a hash function (like MD5 or SHA-256)
+
 Hexadecimal:
 (1) A number system in base 16
 
