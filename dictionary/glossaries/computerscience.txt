@@ -31,6 +31,9 @@ Computer:
 Decipher (verb):
 (1) To decrypt an encrypted message
 
+ISO-8859-1:
+(1) An 8-bit character encoding system, consistent with ASCII for the first 128 characters, that was used as the default charset in HTML4
+
 Machine code:
 (1) A computer language that is understood by a processor.
 
@@ -54,3 +57,10 @@ Programming language:
 Unicode:
 (1) A 32-bit character encoding system (or character encoding standard) which has 0x110000 code points, and is consistent with ASCII for the first 128 characters.
 (2) A universal character encoding system that supports every world language or almost every world language.
+
+UTF-8:
+(1) The most compressed Unicode format. The default character encoding system on MacOS and the default character encoding system in HTML5.
+(2) A variable-width character encoding system that uses 1, 2, 3, or 4 bytes to encode a character, depending on the character, and depending on how many bytes are needed.
+
+Windows-1252:
+(1) An 8-bit character encoding system, consistent with ASCII for the first 128 characters, that was used as the default character encoding system in early versions of Windows
