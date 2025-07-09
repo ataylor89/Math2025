@@ -7,7 +7,7 @@ To begin this project I would like to start with a couple of quotes:
 
 My family made a riff on the quote from Uncle Iroh. Here is our riff:
 
-"You must ask yourself the important questions. Why does it rain? Why is a sunset red? Why is the sky blue?"
+> "You must ask yourself the important questions. Why does it rain? Why is a sunset red? Why is the sky blue?"
 
 Inspired by this riff, inspired by Avatar, inspired by Tolstoy, we are going to proceed with answering some of the most important questions, like, "Why does it rain?" and "Why is the sky blue?" and "Why is a sunset red?"
 
