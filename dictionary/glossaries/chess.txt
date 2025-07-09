@@ -1,5 +1,9 @@
 Combination:
 (1) A tactic that consists of two or more moves
 
+Strategy:
+(1) A plan
+(2) The area of chess concerned with planning
+
 Tactic:
 (1) A short sequence of moves that yields an advantage or a winning advantage
