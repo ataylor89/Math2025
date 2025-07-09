@@ -1,4 +1,6 @@
-1. Why does it rain?
+# Answers
+
+## 1. Why does it rain?
 
 Water evaporates from land and water, and rises through the air, as water vapor, until it reaches the level of clouds. Once it reaches the level of clouds, the water vapor condenses on particles of dust that are in the clouds.
 
@@ -24,6 +26,6 @@ Now let's answer our question. Why does it rain?
 
 It rains when the force of gravity acting on water droplets exceeds the force of friction that suspends them.
 
-2. Why is the sky blue?
+## 2. Why is the sky blue?
 
 The sky is blue because the molecules in the air scatter blue light more than they scatter red light, and the blue light gets reflected back to the observer. This is a phenomenon known as Rayleigh scattering.
