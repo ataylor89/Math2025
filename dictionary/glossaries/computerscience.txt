@@ -28,8 +28,14 @@ Computer:
 (1) A processor combined with memory and IO devices
 (2) A technology or system that contains a central processing unit (CPU), memory, and IO devices
 
+Decimal:
+(1) A number system in base 10
+
 Decipher (verb):
 (1) To decrypt an encrypted message
+
+Hexadecimal:
+(1) A number system in base 16
 
 ISO-8859-1:
 (1) An 8-bit character encoding system, consistent with ASCII for the first 128 characters, that was used as the default charset in HTML4
