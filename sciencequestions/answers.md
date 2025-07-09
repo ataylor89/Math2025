@@ -7,8 +7,8 @@ Water evaporates from land and water, and rises through the air, as water vapor,
 Once the water vapor condenses on particles of dust, it forms water droplets that are suspended in the air.
 
 There are two forces acting on these water droplets:
-(1) The force of gravity which pulls them toward the earth
-(2) The force of friction which suspends them in the air
+1. The force of gravity which pulls them toward the earth
+2. The force of friction which suspends them in the air
 
 The friction force I am talking about is also called air resistance.
 
