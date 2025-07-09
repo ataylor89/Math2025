@@ -1,6 +1,16 @@
 Combination:
 (1) A tactic that consists of two or more moves
 
+Endgame:
+(1) The third phase of a chess game, when queens have been traded and queens are no longer on the board
+
+Middlegame:
+(1) The second phase of a chess game, where the players are "out of book"
+(2) The second phase of a chess game, where the moves are no longer known in advance
+
+Opening:
+(1) The first phase of a chess game, where the moves are known in advance through memorization or study
+
 Strategy:
 (1) A plan
 (2) The area of chess concerned with planning
