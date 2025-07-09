@@ -2,8 +2,8 @@
 
 To begin this project I would like to start with a couple of quotes:
 
-1. "You must ask yourself the big questions. Who are you and what do you want?" (Uncle Iroh from Avatar)
-2. "Who am I? What am I doing? Why am I here?" (Levin from Anna Karenina)
+> 1. "You must ask yourself the big questions. Who are you and what do you want?" (Uncle Iroh from Avatar)
+> 2. "Who am I? What am I doing? Why am I here?" (Levin from Anna Karenina)
 
 My family made a riff on the quote from Uncle Iroh. Here is our riff:
 
