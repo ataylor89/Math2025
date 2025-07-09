@@ -57,6 +57,7 @@ Memory:
 
 Memory cell:
 (1) A cell in memory that has either a high voltage level or a low voltage level, which can be translated to a 1 or a 0, and represented by a bit
+(2) A cell in memory that stores a 1 or a 0 as a voltage signal
 
 Parse/parser:
 (1) To break a whole into parts
