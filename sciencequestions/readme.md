@@ -9,6 +9,6 @@ My family made a riff on the quote from Uncle Iroh. Here is our riff:
 
 > "You must ask yourself the important questions. Why is the sky blue? Why is a sunset red? Why does it rain?"
 
-Inspired by this riff, inspired by Avatar, inspired by Tolstoy, we are going to proceed with answering some of the most important questions, like, "Why does it rain?" and "Why is the sky blue?" and "Why is a sunset red?"
+Inspired by this riff, inspired by Avatar, inspired by Tolstoy, we are going to proceed with answering some of the most important questions, like, "Why is the sky blue?" and "Why is a sunset red?" and "Why does it rain?"
 
 The answers are provided in this folder. I will create a questions.md file and an answers.md file.
