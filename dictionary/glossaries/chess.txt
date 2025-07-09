@@ -1,3 +1,9 @@
+Check:
+(1) A move that attacks the opponent's king
+
+Checkmate:
+(1) A check that cannot be escaped
+
 Combination:
 (1) A tactic that consists of two or more moves
 
