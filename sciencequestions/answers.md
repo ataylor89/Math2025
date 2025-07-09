@@ -29,3 +29,5 @@ It rains when the force of gravity acting on water droplets exceeds the force of
 ## 2. Why is the sky blue?
 
 The sky is blue because the molecules in the air scatter blue light more than they scatter red light, and the blue light gets reflected back to the observer. This is a phenomenon known as Rayleigh scattering.
+
+To use a different terminology, the resonant frequencies of nitrogen (N2) and oxygen (O2) are in the blue portion of the visible spectrum. They scatter blue light in all directions, more than they scatter other frequencies.
