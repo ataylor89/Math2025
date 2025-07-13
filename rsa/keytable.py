@@ -5,14 +5,13 @@ import pickle
 import sys
 import os
 
-error_msg = "Usage: python keytable.py <size> <threshold>"
+flags = {'existing_table_sufficient': False}
 
-already_exists = False
-already_exists_msg = "The existing table is sufficient"
+error_msg = "Usage: python keytable.py <size> <threshold>"
+existing_table_sufficient = "The existing table is sufficient"
 
 test_message = "hello world! my name is andrew"
 
-# Loads a key table from the file path
 def load(path='keytable.pickle'):
     global table
 
@@ -23,21 +22,18 @@ def load(path='keytable.pickle'):
 
     return False
 
-# Saves a key table to the file path
 def save(path):
-    if table and not already_exists:
+    if table and not flags['existing_table_sufficient']:
         file = open(path, "wb")
         pickle.dump(table, file)
 
-# Generates a key table of size s with threshold t
 def generate(s, t):
     global table
-    global already_exists
 
     load("keytable.pickle")
 
     if 'table' in globals() and table['threshold'] >= t and len(table['table']) >= s:
-        already_exists = True
+        flags['existing_table_sufficient'] = True
         return
  
     if 'table' not in globals() or table['threshold'] < t:
@@ -86,7 +82,7 @@ def generate(s, t):
                 print("Adding key (n=%d, p=%d, q=%d, phi=%d, e=%d, d=%d)" %(n, p, q, phi, e, d))
                 table['table'][n] = (n, p, q, phi, e, d)
 
-    already_exists = False
+    flags['existing_table_sufficient'] = False
 
 def test(n, e, d):
     codes = list(map(lambda x: ord(x), test_message))
@@ -111,8 +107,8 @@ def main():
     
     generate(size, threshold)
 
-    if already_exists:
-        print(already_exists_msg)
+    if flags['existing_table_sufficient']:
+        print(existing_table_sufficient)
     else:
         save("keytable.pickle")
 
